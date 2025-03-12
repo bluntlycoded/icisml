@@ -21,7 +21,7 @@
       <nav class="hidden md:block">
         <ul class="flex space-x-6">
           <li><a href="index.html" class="hover:text-gray-300">Home</a></li>
-          <li><a href="about.html" class="hover:text-gray-300">About</a></li>
+
           <li><a href="call-for-papers.html" class="hover:text-gray-300">Call for Papers</a></li>
           <li><a href="publication.html" class="hover:text-gray-300">Publication</a></li>
           <li><a href="registration.html" class="hover:text-gray-300">Registration</a></li>
@@ -48,7 +48,7 @@
   <div id="mobile-menu" class="bg-blue-900 text-white hidden">
     <ul class="p-4 space-y-2">
       <li><a href="index.html" class="block hover:bg-blue-800 p-2">Home</a></li>
-      <li><a href="about.html" class="block hover:bg-blue-800 p-2">About</a></li>
+
       <li><a href="call-for-papers.html" class="block hover:bg-blue-800 p-2">Call for Papers</a></li>
       <li><a href="publication.html" class="block hover:bg-blue-800 p-2">Publication</a></li>
       <li><a href="registration.html" class="block hover:bg-blue-800 p-2">Registration</a></li>
@@ -62,13 +62,25 @@
   <!-- Top Images Section -->
   <section class="bg-white py-4 shadow-sm">
     <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-4">
-      <!-- Replace these with your actual campus images -->
-      <img src="images/campus1.jpg" alt="Campus 1" class="w-full h-auto rounded-lg shadow">
-      <img src="images/campus2.jpg" alt="Campus 2" class="w-full h-auto rounded-lg shadow">
-      <img src="images/campus3.jpg" alt="Campus 3" class="w-full h-auto rounded-lg shadow">
-      <img src="images/campus4.jpg" alt="Campus 4" class="w-full h-auto rounded-lg shadow">
+      <div class="flex flex-col items-center">
+        <img src="https://i.ibb.co/F4KjgqP9/Academic-Building-C.jpg" alt="Campus 1" class="w-full h-auto rounded-lg shadow">
+        <p class="mt-2 text-center text-gray-700 text-sm">Academic Building C</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="https://i.ibb.co/nq1Lbd5b/Academic-Building-D.jpg" alt="Campus 2" class="w-full h-auto rounded-lg shadow">
+        <p class="mt-2 text-center text-gray-700 text-sm">Academic Building D</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="https://i.ibb.co/nNBscJ3P/Admin-Back-side.jpg" alt="Campus 3" class="w-full h-auto rounded-lg shadow">
+        <p class="mt-2 text-center text-gray-700 text-sm">Admin Back Side</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="https://i.ibb.co/99hCBw4L/Library-Building.jpg" alt="Campus 4" class="w-full h-auto rounded-lg shadow">
+        <p class="mt-2 text-center text-gray-700 text-sm">Library Building</p>
+      </div>
     </div>
   </section>
+
 
   <!-- Contact & Address Section -->
   <main class="py-10">
@@ -138,20 +150,19 @@
   <!-- Google Map Section -->
   <section class="pb-10">
     <div class="container mx-auto px-4">
-      <div class="bg-white p-6 rounded-lg shadow">
+      <div class="bg-white p-6 rounded-lg shadow h-96">
         <h2 class="text-2xl font-bold text-blue-900 mb-4">Find Us</h2>
-        <!-- Adjust width/height or zoom as needed -->
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.332863615487!2d91.88300221506145!3d27.166417883000027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374efc8e3ab7c2f9%3A0x84314a180fa73f4e!2sNIT%20Meghalaya!5e0!3m2!1sen!2sin!4v1616146473373!5m2!1sen!2sin"
-          width="100%"
-          height="300"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-        ></iframe>
+                class="w-full h-full rounded-lg"
+                loading="lazy"
+                src="https://maps.google.com/maps?q=National%20Institute%20of%20Technology%20MeghalayaShillong%2C%20Meghalaya&amp;t=m&amp;z=13&amp;output=embed&amp;iwloc=near"
+                title="National Institute of Technology MeghalayaShillong, Meghalaya"
+                aria-label="National Institute of Technology MeghalayaShillong, Meghalaya">
+        </iframe>
       </div>
     </div>
   </section>
+
 
   <!-- Footer -->
   <footer class="bg-blue-900 text-white py-4">
