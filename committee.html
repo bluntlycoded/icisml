@@ -1,99 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ICISML 2025 - Committee</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- Tailwind CSS -->
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
-<body>
-  <!-- Header with Navigation -->
-  <header>
-    <div class="container">
-      <div class="logo">
-        <a href="index.html">ICISML 2025</a>
+<body class="bg-gray-100">
+
+  <!-- Navigation Bar -->
+  <header class="bg-blue-900 text-white">
+    <div class="container mx-auto flex justify-between items-center py-4 px-4">
+      <!-- Logo / Title -->
+      <div class="text-xl font-bold">
+        <a href="#">ICISML 2025</a>
       </div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="call-for-papers.html">Call for Papers</a></li>
-          <li><a href="publication.html">Publication</a></li>
-          <li><a href="registration.html">Registration</a></li>
-          <li><a href="authors.html">Authors</a></li>
-          <li><a href="speakers.html">Speakers</a></li>
-          <li><a href="committee.html" class="active">Committee</a></li>
-          <li><a href="contact.html">Contact</a></li>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:block">
+        <ul class="flex space-x-6">
+          <li><a href="index.html" class="hover:text-gray-300">Home</a></li>
+          <li><a href="about.html" class="hover:text-gray-300">About</a></li>
+          <li><a href="call-for-papers.html" class="hover:text-gray-300">Call for Papers</a></li>
+          <li><a href="publication.html" class="hover:text-gray-300">Publication</a></li>
+          <li><a href="registration.html" class="hover:text-gray-300">Registration</a></li>
+          <li><a href="authors.html" class="hover:text-gray-300">Authors</a></li>
+          <li><a href="speakers.html" class="hover:text-gray-300">Speakers</a></li>
+          <li><a href="committee.html" class="underline">Committee</a></li>
+          <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
         </ul>
-        <div class="mobile-menu">
-          <span class="menu-icon" onclick="toggleMobileMenu()">&#9776;</span>
-        </div>
       </nav>
+      
+      <!-- Mobile Menu Button -->
+      <button
+        class="md:hidden focus:outline-none"
+        onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+      >
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+          <path d="M4 5h16M4 12h16M4 19h16"/>
+        </svg>
+      </button>
     </div>
   </header>
-  
+
   <!-- Mobile Navigation -->
-  <div id="mobileNav" class="mobile-nav">
-    <ul>
-      <li><a href="index.html" onclick="toggleMobileMenu()">Home</a></li>
-      <li><a href="about.html" onclick="toggleMobileMenu()">About</a></li>
-      <li><a href="call-for-papers.html" onclick="toggleMobileMenu()">Call for Papers</a></li>
-      <li><a href="publication.html" onclick="toggleMobileMenu()">Publication</a></li>
-      <li><a href="registration.html" onclick="toggleMobileMenu()">Registration</a></li>
-      <li><a href="authors.html" onclick="toggleMobileMenu()">Authors</a></li>
-      <li><a href="speakers.html" onclick="toggleMobileMenu()">Speakers</a></li>
-      <li><a href="committee.html" onclick="toggleMobileMenu()">Committee</a></li>
-      <li><a href="contact.html" onclick="toggleMobileMenu()">Contact</a></li>
+  <div id="mobile-menu" class="bg-blue-900 text-white hidden">
+    <ul class="p-4 space-y-2">
+      <li><a href="index.html" class="block hover:bg-blue-800 p-2">Home</a></li>
+      <li><a href="about.html" class="block hover:bg-blue-800 p-2">About</a></li>
+      <li><a href="call-for-papers.html" class="block hover:bg-blue-800 p-2">Call for Papers</a></li>
+      <li><a href="publication.html" class="block hover:bg-blue-800 p-2">Publication</a></li>
+      <li><a href="registration.html" class="block hover:bg-blue-800 p-2">Registration</a></li>
+      <li><a href="authors.html" class="block hover:bg-blue-800 p-2">Authors</a></li>
+      <li><a href="speakers.html" class="block hover:bg-blue-800 p-2">Speakers</a></li>
+      <li><a href="committee.html" class="block hover:bg-blue-800 p-2 underline">Committee</a></li>
+      <li><a href="contact.html" class="block hover:bg-blue-800 p-2">Contact</a></li>
     </ul>
   </div>
-  
-  <!-- Main Content -->
-  <main>
-    <section id="committee" class="committee-section">
-      <div class="container">
-        <h1>Organizing Committee</h1>
-        <p>
-          Meet the dedicated team behind ICISML 2025. Our organizing committee is comprised of renowned experts and professionals committed to delivering a world-class conference.
-        </p>
-        <div class="committee-list">
-          <div class="committee-member">
-            <h3>Dr. A. Kumar</h3>
-            <p><strong>Patron</strong></p>
-            <p>Email: akumar@example.com</p>
-          </div>
-          <div class="committee-member">
-            <h3>Prof. R. Sharma</h3>
-            <p><strong>General Chair</strong></p>
-            <p>Email: rsharma@example.com</p>
-          </div>
-          <div class="committee-member">
-            <h3>Ms. L. Gupta</h3>
-            <p><strong>Program Chair</strong></p>
-            <p>Email: lgupta@example.com</p>
-          </div>
-          <div class="committee-member">
-            <h3>Mr. S. Verma</h3>
-            <p><strong>Technical Coordinator</strong></p>
-            <p>Email: sverma@example.com</p>
-          </div>
-          <!-- Add additional committee members as needed -->
-        </div>
-      </div>
-    </section>
+
+  <!-- Page Title -->
+  <section class="bg-white py-10 shadow-sm">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-3xl md:text-4xl font-bold text-blue-900 mb-2">Organizing Committee</h1>
+      <p class="text-gray-700 max-w-2xl mx-auto">
+        Meet the dedicated team behind ICISML 2025. Our committee comprises renowned experts, professionals, and academicians committed to delivering a world-class conference.
+      </p>
+    </div>
+  </section>
+
+  <!-- Committee Sections -->
+  <main class="pb-10">
+    <div class="container mx-auto px-4">
+
+      <!-- Patron -->
+      <section class="py-6">
+        <h2 class="text-2xl font-bold text-blue-900 mb-4">Patron</h2>
+        <p class="text-gray-700"><strong>Prof. Pinakeswar Mahanta</strong>, Director, NIT Meghalaya, India</p>
+      </section>
+
+      <!-- Internal Advisory Board -->
+      <section class="py-6 bg-gray-50 rounded-lg px-4">
+        <h2 class="text-2xl font-bold text-blue-900 mb-4">Internal Advisory Board</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li><strong>Prof. Diptendu Sinha Roy</strong>, Dean (R&C), NIT Meghalaya, India</li>
+          <li><strong>Prof. Anup Dandapat</strong>, Dean (AA), NIT Meghalaya, India</li>
+          <li><strong>Prof. Deba Kumar Sarma</strong>, Dean (P&D), NIT Meghalaya, India</li>
+          <li><strong>Prof. Saikat Mukherjee</strong>, Dean (FW), NIT Meghalaya, India</li>
+          <li><strong>Prof. Paonam Sudeep Mangang</strong>, Dean (SW), NIT Meghalaya, India</li>
+          <li><strong>Prof. Harish Chandra Das</strong>, Dean (PRBR), NIT Meghalaya, India</li>
+          <li><strong>Dr. Pradeep Kumar Rathore</strong>, ECE, NIT Meghalaya, India</li>
+          <li><strong>Dr. Shaik Affijulla</strong>, EE, NIT Meghalaya, India</li>
+          <li><strong>Dr. Pradeep Kumar Gautam</strong>, CE, NIT Meghalaya, India</li>
+          <li><strong>Dr. Koushik Das</strong>, ME, NIT Meghalaya, India</li>
+          <li><strong>Dr. Adarsha Kumar Jena</strong>, MATH, NIT Meghalaya, India</li>
+          <li><strong>Dr. Tribedi Bora</strong>, PHY, NIT Meghalaya, India</li>
+          <li><strong>Dr. Gitish Kishor Dutta</strong>, CHEM, NIT Meghalaya, India</li>
+        </ul>
+      </section>
+
+      <!-- General Chair -->
+      <section class="py-6">
+        <h2 class="text-2xl font-bold text-blue-900 mb-4">General Chair</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li><strong>Dr. Ngangbam Herojit Singh</strong>, CSE, NIT Meghalaya, India</li>
+          <li><strong>Dr. Sachi Nandan Mohanty</strong>, VIT-AP University, Amaravati, Andhra Pradesh, India</li>
+        </ul>
+      </section>
+
+      <!-- Program Chair -->
+      <section class="py-6 bg-gray-50 rounded-lg px-4">
+        <h2 class="text-2xl font-bold text-blue-900 mb-4">Program Chair</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li><strong>Dr. Bunil Kumar Balabantaray</strong>, CSE, NIT Meghalaya, India</li>
+          <li><strong>Dr. Ningthoujam Johny Singh</strong>, CSE, NIT Meghalaya, India</li>
+          <li><strong>Dr. Soumen Moulik</strong>, CSE, NIT Meghalaya, India</li>
+        </ul>
+      </section>
+
+      <!-- General Co-Chairs -->
+      <section class="py-6">
+        <h2 class="text-2xl font-bold text-blue-900 mb-4">General Co-Chairs</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li><strong>Dr. Deepak Kumar</strong>, CSE, NIT Meghalaya, India</li>
+          <li><strong>Dr. Surmila Thokchom</strong>, CSE, NIT Meghalaya, India</li>
+          <li><strong>Prof. (Dr.) Tanupriya Choudhury</strong>, UPES Dehradun, India</li>
+          <li><strong>Prof. Diptendu Sinha Roy</strong>, NIT Meghalaya, India</li>
+        </ul>
+      </section>
+
+      <!-- Technical Program Committee -->
+      <section class="py-6 bg-gray-50 rounded-lg px-4">
+        <h2 class="text-2xl font-bold text-blue-900 mb-4">Technical Program Committee</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Ming Yang, Kennesaw State University, Atlanta, USA</li>
+          <li>Bhupesh Kumar Dewangan, OP Jindal University, Raigarh, India</li>
+          <li>Sanjay Misra, Covenant University, Ota, Nigeria</li>
+          <li>Milos Stojmenovic, Singidunum University, Serbia</li>
+          <li>Georgios Tsaramirsis, Higher Colleges of Technology, Abu Dhabi</li>
+          <li>Sven Groppe, University of Lübeck, Germany</li>
+          <li>Mohammad Yamin, Abdulaziz University, Jeddah, Saudi Arabia</li>
+          <li>Mukesh Misra, Massey University, New Zealand</li>
+          <li>Neha Mohanty, Dept. of CSE, New Jersey Institute of Technology, USA</li>
+          <li>Jinghua Groppe, University of Lübeck, Germany</li>
+          <li>Abdulrhman Alshareef, King Abdulaziz University</li>
+          <li>Gourav Gupta, Massey University, Palmerston North, New Zealand</li>
+          <li>Lal Hussain, University of Jazad Ammu and Kashmir, Pakistan</li>
+          <li>Maria Avilés, Gijon Hospital, Asturias, Spain</li>
+          <li>Izzat Al-Darraji, University of Baghdad, Iraq</li>
+          <li>Lie Li, Kennesaw State University, Atlanta, USA</li>
+          <li>Osamah Ibrahim Khalaf, Department of Solar, Al-Nahrain Research Center for Renewable Energy, Al-Nahrain University, Jadriya, Baghdad, Iraq</li>
+          <li>Osamah Ibrahim Khalaf, Department of Solar</li>
+          <li>Ghaida Muttashar Abdulsahib, University of Technology, Baghdad, Iraq</li>
+          <li>Sameer Algburi, Al-Kitab University, Iraq</li>
+          <li>Habib Hamam, Faculty of Engineering, University of Moncton, Canada</li>
+        </ul>
+      </section>
+
+      <!-- Web Chair -->
+      <section class="py-6">
+        <h2 class="text-2xl font-bold text-blue-900 mb-4">Web Chair</h2>
+        <p class="text-gray-700"><strong>Dr. Akhilendra Pratap Singh</strong>, CSE, NIT Meghalaya, India</p>
+      </section>
+
+      <!-- Publicity and Social Media Chair -->
+      <section class="py-6 bg-gray-50 rounded-lg px-4">
+        <h2 class="text-2xl font-bold text-blue-900 mb-4">Publicity And Social Media Chair</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Sudan Jha, Kathmandu University, Nepal</li>
+          <li>Nonita Sharma, IGDTUW, New Delhi, India</li>
+          <li>Shweta Sankhwar, Maitreyi College, University of Delhi, India</li>
+          <li>Bhrugumalla LVS Aditya, VIT-AP University, AP, India</li>
+          <li>Princy Randhawa, Manipal University, Jaipur, India</li>
+          <li>Suvendu Kumar Pani, KEC, Bhubaneswar, Odisha, India</li>
+          <li>Yagnesh Challagundla, University of Florida, USA</li>
+          <li>A. Pramod Kumar, CMR Engineering College, Hyderabad, India</li>
+        </ul>
+      </section>
+
+      <!-- Workshop Chair -->
+      <section class="py-6">
+        <h2 class="text-2xl font-bold text-blue-900 mb-4">Workshop Chair</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Shreyas Rajendra Hole, Dayananda Sagar University, Bengaluru, India</li>
+          <li>Princy Randhawa, Manipal University, Jaipur, India</li>
+          <li>Puranam Revanth Kumar, Malla Reddy University, Hyderabad, India</li>
+          <li>Nidhi Agarwal, Galgotias University, Greater Noida</li>
+          <li>Sirisha Potluri, Koneru Lakshmaiah Education Foundation, Telangana, India</li>
+          <li>Satyasundara Mahapatra, Pranveer Singh Institute of Technology, Kanpur, India</li>
+        </ul>
+      </section>
+
+      <!-- Finance Chair -->
+      <section class="py-6 bg-gray-50 rounded-lg px-4">
+        <h2 class="text-2xl font-bold text-blue-900 mb-4">Finance Chair</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Diangarti Bhalang Tariang, CSE, NIT Meghalaya, India</li>
+          <li>Monika Mangla, Dwaradas J Sanghvi College of Engineering Mumbai, India</li>
+        </ul>
+      </section>
+
+      <!-- Advisory Committee -->
+      <section class="py-6">
+        <h2 class="text-2xl font-bold text-blue-900 mb-4">Advisory Committee</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Vicente Garcia Diaz, University of Oviedo, Spain</li>
+          <li>Sanjay Misra, Covenant University, Nigeria</li>
+          <li>Jorge García Gutiérrez, University of Seville, Spain</li>
+          <li>Jesús Moreno-León, University of Seville, Spain</li>
+          <li>Milos Stojmenovic, Singidunum University, Serbia</li>
+          <li>Georgios Tsaramirsis, Higher Colleges of Technology Womens Campus, Abu Dhabi, UAE</li>
+          <li>Sven Groppe, University of Lübeck Institute of Information, Germany</li>
+          <li>Mohammad Yamin, King Abdulaziz University, Saudi Arabia</li>
+          <li>Mukesh Misra, Massey University, New Zealand</li>
+          <li>Neha Mohanty, Institute of Technology, New Jersey, USA</li>
+          <li>Aleksandar Jevremovic, University of Lübeck Institute of Information, Germany</li>
+          <li>Jinghua Groppe, University of Lübeck Institute of Information, Germany</li>
+          <li>Abdulrhman M. Alshareef, King Abdulaziz University, Jeddah, Saudi Arabia</li>
+          <li>Gourav Sen Gupta, Massey University, Palmerston North, New Zealand</li>
+          <li>K. Ramesh, California State University, Northridge, California</li>
+          <li>Lal Hussain, University of Azad, King Abdullah Campus, Pakistan</li>
+          <li>María José Navarro Avilés, Gijon Hospital, Asturias, Spain</li>
+          <li>Ishani Priya Darshini, Berkeley School of Information, Berkeley, USA</li>
+          <li>Santunu Choudhury, IIT Jodhpur, Rajasthan, India</li>
+          <li>Durga Prasad Mohapatro, NIT Rourkela, Odisha, India</li>
+          <li>Kuntal Ghosh, ISI Kolkata, India</li>
+          <li>Debasis Samanta, IIT Kharagpur, WB, India</li>
+          <li>Olfat M. Mirza, Umm Al-Qura University, Makkah, Saudi Arabia</li>
+          <li>Aisha Alsobhi, King Abdulaziz University, Jeddah, Saudi Arabia</li>
+          <li>Tawfiq Hasanin, King Abdulaziz University, Jeddah, Saudi Arabia</li>
+          <li>Alaa O. Khadidos, King Abdulaziz University, Jeddah, Saudi Arabia</li>
+        </ul>
+      </section>
+
+      <!-- Publication Chair -->
+      <section class="py-6 bg-gray-50 rounded-lg px-4">
+        <h2 class="text-2xl font-bold text-blue-900 mb-4">Publication Chair</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Nithesh Naik, Manipal Institute of Technology, Manipal, India</li>
+          <li>Suneeta Satpathy, SOA Deemed to be University, Odisha, India</li>
+        </ul>
+      </section>
+
+      <!-- Sponsorship and Exhibit Chair -->
+      <section class="py-6">
+        <h2 class="text-2xl font-bold text-blue-900 mb-4">Sponsorship and Exhibit Chair</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Deepa Jose, KCG College of Technology, Chennai, India</li>
+          <li>Priya Gupta, ABVSME, JNU New Delhi, India</li>
+        </ul>
+      </section>
+
+    </div>
   </main>
-  
+
   <!-- Footer -->
-  <footer>
-    <div class="container">
+  <footer class="bg-blue-900 text-white py-4">
+    <div class="container mx-auto px-4 text-center">
       <p>&copy; 2025 ICISML. All Rights Reserved.</p>
-      <ul class="social-links">
-        <li><a href="#">Twitter</a></li>
-        <li><a href="#">LinkedIn</a></li>
-        <li><a href="#">Facebook</a></li>
-      </ul>
+      <div class="flex justify-center space-x-4 mt-2">
+        <a href="#" class="hover:text-gray-300">Twitter</a>
+        <a href="#" class="hover:text-gray-300">LinkedIn</a>
+        <a href="#" class="hover:text-gray-300">Facebook</a>
+      </div>
     </div>
   </footer>
-  
-  <script src="js/scripts.js"></script>
+
 </body>
 </html>

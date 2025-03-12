@@ -1,87 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ICISML 2025 - Speakers</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- Tailwind CSS -->
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
-<body>
-  <!-- Header with Navigation -->
-  <header>
-    <div class="container">
-      <div class="logo">
-        <a href="index.html">ICISML 2025</a>
+<body class="bg-gray-100">
+
+  <!-- Navigation Bar -->
+  <header class="bg-blue-900 text-white">
+    <div class="container mx-auto flex justify-between items-center py-4 px-4">
+      <!-- Logo / Title -->
+      <div class="text-xl font-bold">
+        <a href="#">ICISML 2025</a>
       </div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="call-for-papers.html">Call for Papers</a></li>
-          <li><a href="publication.html">Publication</a></li>
-          <li><a href="registration.html">Registration</a></li>
-          <li><a href="authors.html">Authors</a></li>
-          <li><a href="speakers.html" class="active">Speakers</a></li>
-          <li><a href="committee.html">Committee</a></li>
-          <li><a href="contact.html">Contact</a></li>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:block">
+        <ul class="flex space-x-6">
+          <li><a href="index.html" class="hover:text-gray-300">Home</a></li>
+          <li><a href="about.html" class="hover:text-gray-300">About</a></li>
+          <li><a href="call-for-papers.html" class="hover:text-gray-300">Call for Papers</a></li>
+          <li><a href="publication.html" class="hover:text-gray-300">Publication</a></li>
+          <li><a href="registration.html" class="hover:text-gray-300">Registration</a></li>
+          <li><a href="authors.html" class="hover:text-gray-300">Authors</a></li>
+          <li><a href="speakers.html" class="underline">Speakers</a></li>
+          <li><a href="committee.html" class="hover:text-gray-300">Committee</a></li>
+          <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
         </ul>
-        <div class="mobile-menu">
-          <span class="menu-icon" onclick="toggleMobileMenu()">&#9776;</span>
-        </div>
       </nav>
+      
+      <!-- Mobile Menu Button -->
+      <button
+        class="md:hidden focus:outline-none"
+        onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+      >
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+          <path d="M4 5h16M4 12h16M4 19h16"/>
+        </svg>
+      </button>
     </div>
   </header>
-  
+
   <!-- Mobile Navigation -->
-  <div id="mobileNav" class="mobile-nav">
-    <ul>
-      <li><a href="index.html" onclick="toggleMobileMenu()">Home</a></li>
-      <li><a href="about.html" onclick="toggleMobileMenu()">About</a></li>
-      <li><a href="call-for-papers.html" onclick="toggleMobileMenu()">Call for Papers</a></li>
-      <li><a href="publication.html" onclick="toggleMobileMenu()">Publication</a></li>
-      <li><a href="registration.html" onclick="toggleMobileMenu()">Registration</a></li>
-      <li><a href="authors.html" onclick="toggleMobileMenu()">Authors</a></li>
-      <li><a href="speakers.html" onclick="toggleMobileMenu()">Speakers</a></li>
-      <li><a href="committee.html" onclick="toggleMobileMenu()">Committee</a></li>
-      <li><a href="contact.html" onclick="toggleMobileMenu()">Contact</a></li>
+  <div id="mobile-menu" class="bg-blue-900 text-white hidden">
+    <ul class="p-4 space-y-2">
+      <li><a href="index.html" class="block hover:bg-blue-800 p-2">Home</a></li>
+      <li><a href="about.html" class="block hover:bg-blue-800 p-2">About</a></li>
+      <li><a href="call-for-papers.html" class="block hover:bg-blue-800 p-2">Call for Papers</a></li>
+      <li><a href="publication.html" class="block hover:bg-blue-800 p-2">Publication</a></li>
+      <li><a href="registration.html" class="block hover:bg-blue-800 p-2">Registration</a></li>
+      <li><a href="authors.html" class="block hover:bg-blue-800 p-2">Authors</a></li>
+      <li><a href="speakers.html" class="block hover:bg-blue-800 p-2 underline">Speakers</a></li>
+      <li><a href="committee.html" class="block hover:bg-blue-800 p-2">Committee</a></li>
+      <li><a href="contact.html" class="block hover:bg-blue-800 p-2">Contact</a></li>
     </ul>
   </div>
-  
-  <!-- Main Content -->
-  <main>
-    <section id="speakers" class="speakers-section">
-      <div class="container">
-        <h1>Speakers</h1>
-        <p>Meet our distinguished speakers who are leaders in the fields of Intelligent Communication Systems and Machine Learning.</p>
-        <div class="speaker-list">
-          <div class="speaker">
-            <img src="images/speaker1.jpg" alt="Dr. Jane Doe">
-            <h3>Dr. Jane Doe</h3>
-            <p>Expert in AI and Machine Learning with extensive research on neural networks and data analytics.</p>
+
+  <!-- Header Section / Title -->
+  <section class="bg-white py-10 shadow-sm">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-3xl md:text-4xl font-bold text-blue-900 mb-2">Keynote & Invited Speakers</h1>
+      <p class="text-gray-700 max-w-2xl mx-auto">
+        Meet our distinguished speakers who are leaders in the fields of Intelligent Communication Systems and Machine Learning.
+      </p>
+    </div>
+  </section>
+
+  <!-- Speakers Grid -->
+  <main class="py-10">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Speaker 1 -->
+        <div class="flex bg-white p-6 rounded-lg shadow">
+          <img 
+            src="images/speaker-laxmidhar.jpg" 
+            alt="Prof. Laxmidhar Behera" 
+            class="w-24 h-24 object-cover rounded-full mr-4"
+          />
+          <div>
+            <h3 class="text-xl font-bold text-blue-900">Prof. Laxmidhar Behera</h3>
+            <p class="text-sm text-gray-600">Director, IIT Mandi, India</p>
+            <p class="mt-2 text-gray-700">
+              His research interest includes Intelligent Systems and Control, Vision based Robots, Wearable exoskeleton, Brain-Computer interface, and Drone-based operation and security.
+            </p>
           </div>
-          <div class="speaker">
-            <img src="images/speaker2.jpg" alt="Prof. John Smith">
-            <h3>Prof. John Smith</h3>
-            <p>Leading authority on intelligent communication systems and their applications in modern technology.</p>
-          </div>
-          <!-- Additional speaker profiles can be added here -->
         </div>
+        
+        <!-- Speaker 2 -->
+        <div class="flex bg-white p-6 rounded-lg shadow">
+          <img 
+            src="images/speaker-somayajulu.jpg" 
+            alt="Prof. D.V.L.N Somayajulu" 
+            class="w-24 h-24 object-cover rounded-full mr-4"
+          />
+          <div>
+            <h3 class="text-xl font-bold text-blue-900">Prof. D.V.L.N Somayajulu</h3>
+            <p class="text-sm text-gray-600">NIT Manipur, India</p>
+            <p class="mt-2 text-gray-700">
+              His research interest includes databases, data analytics, query processing, big data, and privacy.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Speaker 3 -->
+        <div class="flex bg-white p-6 rounded-lg shadow">
+          <img 
+            src="images/speaker-pradipkumar.jpg" 
+            alt="Prof. Pradip Kumar Das" 
+            class="w-24 h-24 object-cover rounded-full mr-4"
+          />
+          <div>
+            <h3 class="text-xl font-bold text-blue-900">Prof. Pradip Kumar Das</h3>
+            <p class="text-sm text-gray-600">IIT Guwahati, India</p>
+            <p class="mt-2 text-gray-700">
+              His research interest includes Speech Processing, Man-Machine Intelligence Systems, Drone Technology, Algorithms, Software Engineering, Smart Devices, and Mobile Robotics.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Speaker 4 -->
+        <div class="flex bg-white p-6 rounded-lg shadow">
+          <img 
+            src="images/speaker-mingyang.jpg" 
+            alt="Prof. Ming Yang" 
+            class="w-24 h-24 object-cover rounded-full mr-4"
+          />
+          <div>
+            <h3 class="text-xl font-bold text-blue-900">Prof. Ming Yang</h3>
+            <p class="text-sm text-gray-600">Kennesaw State University, GA, USA</p>
+            <p class="mt-2 text-gray-700">
+              His research interests include image processing, computer vision, machine learning, and remote sensing.
+            </p>
+          </div>
+        </div>
+
       </div>
-    </section>
+    </div>
   </main>
-  
+
   <!-- Footer -->
-  <footer>
-    <div class="container">
+  <footer class="bg-blue-900 text-white py-4 mt-8">
+    <div class="container mx-auto px-4 text-center">
       <p>&copy; 2025 ICISML. All Rights Reserved.</p>
-      <ul class="social-links">
-        <li><a href="#">Twitter</a></li>
-        <li><a href="#">LinkedIn</a></li>
-        <li><a href="#">Facebook</a></li>
-      </ul>
+      <div class="flex justify-center space-x-4 mt-2">
+        <a href="#" class="hover:text-gray-300">Twitter</a>
+        <a href="#" class="hover:text-gray-300">LinkedIn</a>
+        <a href="#" class="hover:text-gray-300">Facebook</a>
+      </div>
     </div>
   </footer>
-  
-  <script src="js/scripts.js"></script>
 </body>
 </html>
