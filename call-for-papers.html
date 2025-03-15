@@ -4,24 +4,230 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ICISML 2025 - Call for Papers</title>
-  <!-- Tailwind CSS (per your instruction) -->
-  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #f7fafc; /* bg-gray-100 */
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+    /* Container Utilities */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .max-w-2xl {
+      max-width: 42rem;
+    }
+    .px-4 { padding-left: 1rem; padding-right: 1rem; }
+    .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+    .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+    .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+    
+    /* Text Colors & Sizes */
+    .text-white { color: #ffffff; }
+    .text-blue-900 { color: #2a4365; }
+    .text-gray-700 { color: #4a5568; }
+    .text-green-700 { color: #2f855a; }
+    .text-yellow-700 { color: #d69e2e; }
+    .text-pink-700 { color: #c5307e; }
+    .text-blue-700 { color: #2b6cb0; }
+    
+    .text-xl { font-size: 1.25rem; }
+    .text-2xl { font-size: 1.5rem; }
+    .text-3xl { font-size: 1.875rem; }
+    .text-5xl { font-size: 3rem; }
+    
+    .font-bold { font-weight: bold; }
+    .font-semibold { font-weight: 600; }
+    
+    /* Background Colors */
+    .bg-gray-100 { background-color: #f7fafc; }
+    .bg-blue-900 { background-color: #2a4365; }
+    .bg-white { background-color: #ffffff; }
+    .bg-gray-50 { background-color: #f9fafb; }
+    .bg-green-100 { background-color: #f0fff4; }
+    .bg-yellow-100 { background-color: #fffff0; }
+    .bg-pink-100 { background-color: #fff5f7; }
+    .bg-blue-100 { background-color: #ebf8ff; }
+    
+    /* Borders for Tracks */
+    .border-l-4 { border-left-width: 4px; }
+    .border-green-400 { border-color: #68d391; }
+    .border-yellow-400 { border-color: #f6e05e; }
+    .border-pink-400 { border-color: #f687b3; }
+    .border-blue-400 { border-color: #63b3ed; }
+    
+    /* Spacing */
+    .mb-3 { margin-bottom: 0.75rem; }
+    .mb-4 { margin-bottom: 1rem; }
+    .mt-3 { margin-top: 0.75rem; }
+    .mt-8 { margin-top: 2rem; }
+    .mt-10 { margin-top: 2.5rem; }
+    
+    /* Layout Utilities */
+    .flex { display: flex; }
+    .flex-col { flex-direction: column; }
+    .justify-between { justify-content: space-between; }
+    .justify-center { justify-content: center; }
+    .items-center { align-items: center; }
+    .space-x-6 > :not(:last-child) { margin-right: 1.5rem; }
+    .space-y-2 > :not(:last-child) { margin-bottom: 0.5rem; }
+    
+    /* Grid Layout for Tracks */
+    .grid { display: grid; }
+    .grid-cols-1 { grid-template-columns: 1fr; }
+    .gap-6 { gap: 1.5rem; }
+    @media (min-width: 768px) {
+      .md\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+    }
+    
+    /* Rounded Corners & Shadows */
+    .rounded-lg { border-radius: 0.5rem; }
+    .shadow { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+    .shadow-sm { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); }
+    
+    /* List Styles */
+    .list-disc { list-style-type: disc; }
+    .list-inside { list-style-position: inside; }
+    .space-y-1 > * + * { margin-top: 0.25rem; }
+    
+    /* Hover States */
+    .hover\:text-gray-300:hover { color: #e2e8f0; }
+    .hover\:bg-blue-800:hover { background-color: #2c5282; }
+    .hover\:bg-green-700:hover { background-color: #2f855a; }
+    .hover\:bg-blue-700:hover { background-color: #2b6cb0; }
+    
+    /* Responsive Utilities */
+    @media (min-width: 768px) {
+      .md\:block { display: block; }
+      .md\:text-5xl { font-size: 3rem; }
+    }
+    @media (max-width: 767px) {
+      .md\:hidden { display: none; }
+    }
+    
+    /* Navigation Bar Specifics */
+    header {
+      background-color: #2a4365;
+      color: #fff;
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+    header a {
+      color: #fff;
+    }
+    header nav ul {
+      list-style: none;
+      display: flex;
+    }
+    header nav ul li a {
+      padding: 0.5rem;
+    }
+    header nav ul li a:hover {
+      color: #e2e8f0;
+    }
+    .mobile-menu-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      display: none;
+    }
+    @media (max-width: 767px) {
+      .mobile-menu-button {
+        display: block;
+      }
+      header nav {
+        display: none;
+      }
+    }
+    
+    /* Hero / Heading Section */
+    .hero-section {
+      background-color: #fff;
+      padding: 2rem 0;
+      text-align: center;
+    }
+    
+    /* Track Card */
+    .track-card {
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Submission Guidelines Section */
+    .submission-section {
+      padding: 1rem 0;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .submission-section .container {
+      text-align: center;
+    }
+    
+    /* Button Styling */
+    .inline-block {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      font-weight: 600;
+      border-radius: 0.375rem;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .bg-green-600 { background-color: #38a169; color: #fff; }
+    .bg-blue-600 { background-color: #3182ce; color: #fff; }
+    .hover\:bg-green-700:hover { background-color: #2f855a; }
+    .hover\:bg-blue-700:hover { background-color: #2b6cb0; }
+    
+    /* Footer */
+    footer {
+      background-color: #2a4365;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 2rem;
+    }
+    footer .flex {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    footer a:hover {
+      color: #e2e8f0;
+    }
+  </style>
 </head>
 <body class="bg-gray-100">
-
   <!-- Navigation Bar -->
   <header class="bg-blue-900 text-white">
-    <div class="container mx-auto flex justify-between items-center py-4 px-4">
+    <div class="container flex justify-between items-center py-4 px-4">
       <!-- Logo / Title -->
       <div class="text-xl font-bold">
         <a href="#">ICISML 2025</a>
       </div>
-      
       <!-- Desktop Navigation -->
       <nav class="hidden md:block">
         <ul class="flex space-x-6">
           <li><a href="index.html" class="hover:text-gray-300">Home</a></li>
-
           <li><a href="call-for-papers.html" class="hover:text-gray-300 underline">Call for Papers</a></li>
           <li><a href="publication.html" class="hover:text-gray-300">Publication</a></li>
           <li><a href="registration.html" class="hover:text-gray-300">Registration</a></li>
@@ -31,27 +237,19 @@
           <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
         </ul>
       </nav>
-      
       <!-- Mobile Menu Button -->
-      <button
-        class="md:hidden focus:outline-none"
-        onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
-      >
-        <svg
-          class="w-6 h-6 fill-current"
-          viewBox="0 0 24 24"
-        >
+      <button class="mobile-menu-button focus:outline-none" id="mobile-menu-toggle">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
           <path d="M4 5h16M4 12h16M4 19h16" />
         </svg>
       </button>
     </div>
   </header>
-
+  
   <!-- Mobile Navigation -->
   <div id="mobile-menu" class="bg-blue-900 text-white hidden">
     <ul class="p-4 space-y-2">
       <li><a href="index.html" class="block hover:bg-blue-800 p-2">Home</a></li>
-
       <li><a href="call-for-papers.html" class="block hover:bg-blue-800 p-2 underline">Call for Papers</a></li>
       <li><a href="publication.html" class="block hover:bg-blue-800 p-2">Publication</a></li>
       <li><a href="registration.html" class="block hover:bg-blue-800 p-2">Registration</a></li>
@@ -61,36 +259,36 @@
       <li><a href="contact.html" class="block hover:bg-blue-800 p-2">Contact</a></li>
     </ul>
   </div>
-
+  
   <!-- Hero / Heading Section -->
-  <section class="bg-white py-8">
-    <div class="container mx-auto px-4 text-center">
+  <section class="hero-section bg-white py-8">
+    <div class="container px-4 text-center">
       <h1 class="text-3xl md:text-5xl font-bold text-blue-900 mb-4">Call for Papers</h1>
       <p class="text-gray-700 max-w-2xl mx-auto">
         ICISML 2025 invites submissions of original, high-quality research papers in the following tracks. We look forward to your contributions!
       </p>
     </div>
   </section>
-
+  
   <!-- Tracks in 2x2 Grid -->
   <section class="py-8 bg-gray-50">
-    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="container px-4 tracks-grid md:grid-cols-2 grid-cols-1 gap-6">
       <!-- Track 1 -->
-      <div class="bg-green-100 border-l-4 border-green-400 p-6 rounded-lg shadow">
+      <div class="track-card bg-green-100 border-l-4 border-green-400 p-6 rounded-lg shadow">
         <h2 class="text-xl font-bold text-green-700 mb-2">Track 1: Image Recognition</h2>
         <p class="text-gray-700">
           Image Recognition AI Application in smart cities, Cooperative intelligent applications, Cognitive system and applications, Hybrid Intelligent system, Intelligence by design, Bio-Inspired Intelligence, Real time intelligence, Adaptive Problem Solving, Intelligent and knowledge-based system, AI Powered Robotics systems, Computational Intelligence, Neural networks and Fuzzy logic, VLSI Systems, IoT applications in health care
         </p>
       </div>
       <!-- Track 2 -->
-      <div class="bg-yellow-100 border-l-4 border-yellow-400 p-6 rounded-lg shadow">
+      <div class="track-card bg-yellow-100 border-l-4 border-yellow-400 p-6 rounded-lg shadow">
         <h2 class="text-xl font-bold text-yellow-700 mb-2">Track 2: Machine Learning</h2>
         <p class="text-gray-700">
           Neural net and Support Machine, Hybrid and Non-linear Systems, Reinforcement Learning, Supervised and Unsupervised Learning, Deep Learning, Machine Learning for information retrieval, Hybrid Systems, Human-Machine Interaction, Machine Learning for Informatics, Hybrid Learning Algorithm, Learning in Integrated Architectures, Optimization Techniques.
         </p>
       </div>
       <!-- Track 3 -->
-      <div class="bg-pink-100 border-l-4 border-pink-400 p-6 rounded-lg shadow">
+      <div class="track-card bg-pink-100 border-l-4 border-pink-400 p-6 rounded-lg shadow">
         <h2 class="text-xl font-bold text-pink-700 mb-2">
           Track 3: Intelligent Systems &amp; ML Applications
         </h2>
@@ -99,7 +297,7 @@
         </p>
       </div>
       <!-- Track 4 -->
-      <div class="bg-blue-100 border-l-4 border-blue-400 p-6 rounded-lg shadow">
+      <div class="track-card bg-blue-100 border-l-4 border-blue-400 p-6 rounded-lg shadow">
         <h2 class="text-xl font-bold text-blue-700 mb-2">
           Track 4: Intelligent Communication Networks
         </h2>
@@ -109,10 +307,10 @@
       </div>
     </div>
   </section>
-
+  
   <!-- Submission Guidelines Section -->
-  <section class="py-4 bg-white flex items-center justify-center">
-    <div class="container mx-auto px-4 max-w-2xl text-center">
+  <section class="submission-section bg-white py-4 flex items-center justify-center">
+    <div class="container px-4 max-w-2xl text-center">
       <h2 class="text-2xl font-bold text-blue-900 mb-3">Submission Guidelines</h2>
       <ul class="list-disc list-inside text-gray-700 space-y-1 text-left">
         <li>Papers must be original, not under review elsewhere.</li>
@@ -129,14 +327,12 @@
           Submit Your Paper
         </a>
       </div>
-
     </div>
   </section>
-
-
+  
   <!-- Footer -->
   <footer class="bg-blue-900 text-white py-4">
-    <div class="container mx-auto px-4 text-center">
+    <div class="container px-4 text-center">
       <p>&copy; 2025 ICISML. All Rights Reserved.</p>
       <div class="flex justify-center space-x-4 mt-2">
         <a href="#" class="hover:text-gray-300">Twitter</a>
@@ -145,6 +341,17 @@
       </div>
     </div>
   </footer>
-
+  
+  <script>
+    // Toggle mobile navigation
+    document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
+      var mobileMenu = document.getElementById('mobile-menu');
+      if (mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.remove('hidden');
+      } else {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+  </script>
 </body>
 </html>
