@@ -4,122 +4,89 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ICISML 2025 - Home</title>
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-
-
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Custom styles to enhance the modern look */
+    .hero {
+      background: url('https://i.ibb.co/Z5SyrnX/nit-m.jpg') no-repeat center center;
+      background-size: cover;
+    }
+  </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-light">
 
   <!-- Navigation Bar -->
-  <header class="bg-blue-900 text-white">
-    <div class="container mx-auto flex justify-between items-center py-4 px-4">
-      <!-- Logo / Title -->
-      <div class="text-xl font-bold">
-        <a href="#">ICISML 2025</a>
-      </div>
-      
-      <!-- Desktop Navigation -->
-      <nav class="hidden md:block">
-        <ul class="flex space-x-6">
-          <li><a href="index.html" class="hover:text-gray-300">Home</a></li>
-
-          <li><a href="call-for-papers.html" class="hover:text-gray-300">Call for Papers</a></li>
-          <li><a href="publication.html" class="hover:text-gray-300">Publication</a></li>
-          <li><a href="registration.html" class="hover:text-gray-300">Registration</a></li>
-          <li><a href="authors.html" class="hover:text-gray-300">Authors</a></li>
-          <li><a href="speakers.html" class="hover:text-gray-300">Speakers</a></li>
-          <li><a href="committee.html" class="hover:text-gray-300">Committee</a></li>
-          <li><a href="contact.html" class="underline">Contact</a></li>
-        </ul>
-      </nav>
-      
-      <!-- Mobile Menu Button -->
-      <button
-        class="md:hidden focus:outline-none"
-        onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
-      >
-        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-          <path d="M4 5h16M4 12h16M4 19h16"/>
-        </svg>
+  <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="#">ICISML 2025</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="call-for-papers.html">Call for Papers</a></li>
+          <li class="nav-item"><a class="nav-link" href="publication.html">Publication</a></li>
+          <li class="nav-item"><a class="nav-link" href="registration.html">Registration</a></li>
+          <li class="nav-item"><a class="nav-link" href="authors.html">Authors</a></li>
+          <li class="nav-item"><a class="nav-link" href="speakers.html">Speakers</a></li>
+          <li class="nav-item"><a class="nav-link" href="committee.html">Committee</a></li>
+          <li class="nav-item"><a class="nav-link text-decoration-underline" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </div>
-  </header>
-
-  <!-- Mobile Navigation -->
-  <div id="mobile-menu" class="bg-blue-900 text-white hidden">
-    <ul class="p-4 space-y-2">
-      <li><a href="index.html" class="block hover:bg-blue-800 p-2">Home</a></li>
-
-      <li><a href="call-for-papers.html" class="block hover:bg-blue-800 p-2">Call for Papers</a></li>
-      <li><a href="publication.html" class="block hover:bg-blue-800 p-2">Publication</a></li>
-      <li><a href="registration.html" class="block hover:bg-blue-800 p-2">Registration</a></li>
-      <li><a href="authors.html" class="block hover:bg-blue-800 p-2">Authors</a></li>
-      <li><a href="speakers.html" class="block hover:bg-blue-800 p-2">Speakers</a></li>
-      <li><a href="committee.html" class="block hover:bg-blue-800 p-2">Committee</a></li>
-      <li><a href="contact.html" class="block hover:bg-blue-800 p-2 underline">Contact</a></li>
-    </ul>
-  </div>
+  </nav>
 
   <!-- Hero / CTA Section -->
-  <section class="relative h-screen bg-center bg-cover flex items-center justify-center" style="background-image: url('https://i.ibb.co/Z5SyrnX/nit-m.jpg');">
-    <!-- Dark Overlay -->
-
-    
-    <!-- Hero Content -->
-    <div class="relative z-10 text-center text-white max-w-2xl px-4">
-      <!-- Logo (optional) -->
-      <img src="https://i.ibb.co/ZZ35BFc/fig.png" alt="NITM Logo" class="mx-auto mb-4 w-24 h-auto" />
-      
-      <h1 class="text-3xl md:text-5xl font-bold mb-4">
+  <section class="hero vh-100 d-flex align-items-center justify-content-center text-white text-center">
+    <div class="container">
+      <img src="https://i.ibb.co/ZZ35BFc/fig.png" alt="NITM Logo" class="mb-4" style="width: 96px;">
+      <h1 class="display-4 fw-bold mb-4">
         5th - International Conference Intelligent Systems and Machine Learning (Hybrid Mode)
       </h1>
-      <p class="text-xl md:text-2xl mb-2">May 16-17, 2025</p>
-      <p class="text-xl md:text-2xl mb-6">Computer Science and Engineering Department</p>
-      
-      <!-- CTA Buttons -->
-      <div class="space-x-4">
-        <a href="Conference-Brochure-_3-10-24.pdf" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md" download>
-          Brochure
-        </a>
-        <a href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FICISML2025" class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-md">
-          Click here to submit your paper
-        </a>
+      <p class="h4 mb-2">May 16-17, 2025</p>
+      <p class="h4 mb-4">Computer Science and Engineering Department</p>
+      <div>
+        <a href="Conference-Brochure-_3-10-24.pdf" class="btn btn-lg btn-primary me-2" download>Brochure</a>
+        <a href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FICISML2025" class="btn btn-lg btn-success">Click here to submit your paper</a>
       </div>
     </div>
   </section>
 
   <!-- Important Dates Section -->
-  <section class="py-8 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-2xl font-bold mb-6 text-blue-900">Important Dates</h2>
-      <div class="overflow-x-auto">
-        <table class="table-auto w-full text-left bg-white shadow-lg rounded-lg">
-          <thead>
-            <tr class="bg-blue-50 border-b border-gray-200">
-              <th class="px-4 py-2 font-semibold text-gray-700">Event</th>
-              <th class="px-4 py-2 font-semibold text-gray-700">Date</th>
+  <section class="py-5 bg-white">
+    <div class="container">
+      <h2 class="mb-4 text-primary">Important Dates</h2>
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+          <thead class="table-light">
+            <tr>
+              <th>Event</th>
+              <th>Date</th>
             </tr>
           </thead>
           <tbody>
-            <tr class="border-b border-gray-200">
-              <td class="px-4 py-2">Due Date of Paper Submission</td>
-              <td class="px-4 py-2">10 April, 2025</td>
-            </tr>
-            <tr class="border-b border-gray-200 bg-gray-50">
-              <td class="px-4 py-2">Notification</td>
-              <td class="px-4 py-2">20 April, 2025</td>
-            </tr>
-            <tr class="border-b border-gray-200">
-              <td class="px-4 py-2">Due Date of Registration</td>
-              <td class="px-4 py-2">25 April, 2025</td>
-            </tr>
-            <tr class="border-b border-gray-200 bg-gray-50">
-              <td class="px-4 py-2">Camera Ready Paper Submission</td>
-              <td class="px-4 py-2">30 April, 2025</td>
+            <tr>
+              <td>Due Date of Paper Submission</td>
+              <td>10 April, 2025</td>
             </tr>
             <tr>
-              <td class="px-4 py-2">Conference Date</td>
-              <td class="px-4 py-2">16-17 May, 2025</td>
+              <td>Notification</td>
+              <td>20 April, 2025</td>
+            </tr>
+            <tr>
+              <td>Due Date of Registration</td>
+              <td>25 April, 2025</td>
+            </tr>
+            <tr>
+              <td>Camera Ready Paper Submission</td>
+              <td>30 April, 2025</td>
+            </tr>
+            <tr>
+              <td>Conference Date</td>
+              <td>16-17 May, 2025</td>
             </tr>
           </tbody>
         </table>
@@ -128,93 +95,143 @@
   </section>
 
   <!-- About NIT Meghalaya Section -->
-  <section class="py-8 bg-gray-50">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-      <!-- Image with Rounded Borders -->
-      <div class="md:w-1/2 mb-4 md:mb-0">
-        <img src="https://i.ibb.co/yB86Q94D/Library-Building.jpg" alt="NIT Meghalaya" class="rounded-lg shadow-lg w-full">
-      </div>
-      <!-- Text Information -->
-      <div class="md:w-1/2 md:pl-8">
-        <h2 class="text-2xl font-bold mb-4 text-blue-900">About NIT Meghalaya</h2>
-        <p class="mb-4 text-gray-700">
-          The National Institute of Technology (NIT) Meghalaya is one among the thirty-one NITs in India established under the NIT Act 2007 (Amended 2012) of the Parliament of India as Institutes of National Importance with full funding support from the Ministry of Education (Shiksha Mantralaya), Government of India.
-        </p>
-        <p class="text-gray-700">
-          Currently, the institute is functioning in its temporary campus at Shillong in East Khasi Hills district of Meghalaya and is about 2 kms from the main bus stand of Shillong on Police bazaar – Laitumkhrah roadway. The city of Shillong is well connected with rest of country by road. The nearest railway station is at Guwahati (Assam), at a distance of 100 kms from Shillong. The nearest airport is within city (25 kms). The place has healthy climate with temperature ranging from 15°C to 25°C during March and is at an average altitude of 1496 m above sea level.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gallery Section (3 x 4 Responsive Grid) -->
-  <section class="py-8 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-2xl font-bold mb-6 text-blue-900 text-center">Gallery</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        <div class="flex flex-col items-center">
-          <img src="https://i.ibb.co/LzFYLdrb/dawki.jpg" alt="Dawki River" class="w-full h-64 object-cover rounded-lg shadow-md">
-          <p class="mt-2 text-lg font-semibold text-gray-700">Dawki River</p>
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <img src="https://i.ibb.co/yB86Q94D/Library-Building.jpg" alt="NIT Meghalaya" class="img-fluid rounded shadow">
         </div>
-        <div class="flex flex-col items-center">
-          <img src="https://i.ibb.co/YTQzhpdr/barapani.jpg" alt="Barapani Lake" class="w-full h-64 object-cover rounded-lg shadow-md">
-          <p class="mt-2 text-lg font-semibold text-gray-700">Barapani Lake</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="https://i.ibb.co/G4zr7JhH/krang.jpg" alt="Krang Suri Falls" class="w-full h-64 object-cover rounded-lg shadow-md">
-          <p class="mt-2 text-lg font-semibold text-gray-700">Krang Suri Falls</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="https://i.ibb.co/N29QZp2t/nartiang-monoliths-e1728020102541.jpg" alt="Nartiang Monoliths" class="w-full h-64 object-cover rounded-lg shadow-md">
-          <p class="mt-2 text-lg font-semibold text-gray-700">Nartiang Monoliths</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="https://i.ibb.co/twdZSpzy/phephe-e1728026399842.jpg" alt="Phe Phe Falls" class="w-full h-64 object-cover rounded-lg shadow-md">
-          <p class="mt-2 text-lg font-semibold text-gray-700">Phe Phe Falls</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="https://i.ibb.co/KpwgZcdk/living-root.jpg" alt="Living Root Bridge" class="w-full h-64 object-cover rounded-lg shadow-md">
-          <p class="mt-2 text-lg font-semibold text-gray-700">Living Root Bridge</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="https://i.ibb.co/1GfQQGML/nohkalikai.jpg"  alt="Living Root Bridge" class="w-full h-64 object-cover rounded-lg shadow-md">
-          <p class="mt-2 text-lg font-semibold text-gray-700">Nohkalikai Falls</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="https://i.ibb.co/KpBXVgZL/seven-sisters.jpg"   alt="Living Root Bridge" class="w-full h-64 object-cover rounded-lg shadow-md">
-          <p class="mt-2 text-lg font-semibold text-gray-700">Seven Sisters Falls</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="https://i.ibb.co/wr0vNgg1/wrds.jpg"   alt="Living Root Bridge" class="w-full h-64 object-cover rounded-lg shadow-md">
-          <p class="mt-2 text-lg font-semibold text-gray-700">Wards Lake</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="https://i.ibb.co/whZknQ1X/prut.jpg"  alt="Living Root Bridge" class="w-full h-64 object-cover rounded-lg shadow-md">
-          <p class="mt-2 text-lg font-semibold text-gray-700">Prut Falls</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="https://i.ibb.co/mrpgdT0n/lyngkslar.jpg"  alt="Living Root Bridge" class="w-full h-64 object-cover rounded-lg shadow-md">
-          <p class="mt-2 text-lg font-semibold text-gray-700">Lyngksiar Falls</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="https://i.ibb.co/JjW0CtG2/thlu.jpg"  alt="Living Root Bridge" class="w-full h-64 object-cover rounded-lg shadow-md">
-          <p class="mt-2 text-lg font-semibold text-gray-700">Thlu Muwi Falls</p>
+        <div class="col-md-6">
+          <h2 class="mb-4 text-primary">About NIT Meghalaya</h2>
+          <p class="mb-4 text-secondary">
+            The National Institute of Technology (NIT) Meghalaya is one among the thirty-one NITs in India established under the NIT Act 2007 (Amended 2012) of the Parliament of India as Institutes of National Importance with full funding support from the Ministry of Education (Shiksha Mantralaya), Government of India.
+          </p>
+          <p class="text-secondary">
+            Currently, the institute is functioning in its temporary campus at Shillong in East Khasi Hills district of Meghalaya and is about 2 kms from the main bus stand of Shillong on Police bazaar – Laitumkhrah roadway. The city of Shillong is well connected with rest of country by road. The nearest railway station is at Guwahati (Assam), at a distance of 100 kms from Shillong. The nearest airport is within city (25 kms). The place has healthy climate with temperature ranging from 15°C to 25°C during March and is at an average altitude of 1496 m above sea level.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Gallery Section -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <h2 class="mb-4 text-center text-primary">Gallery</h2>
+      <div class="row g-4">
+        <div class="col-sm-6 col-md-4">
+          <div class="card">
+            <img src="https://i.ibb.co/LzFYLdrb/dawki.jpg" alt="Dawki River" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Dawki River</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="card">
+            <img src="https://i.ibb.co/YTQzhpdr/barapani.jpg" alt="Barapani Lake" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Barapani Lake</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="card">
+            <img src="https://i.ibb.co/G4zr7JhH/krang.jpg" alt="Krang Suri Falls" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Krang Suri Falls</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="card">
+            <img src="https://i.ibb.co/N29QZp2t/nartiang-monoliths-e1728020102541.jpg" alt="Nartiang Monoliths" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Nartiang Monoliths</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="card">
+            <img src="https://i.ibb.co/twdZSpzy/phephe-e1728026399842.jpg" alt="Phe Phe Falls" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Phe Phe Falls</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="card">
+            <img src="https://i.ibb.co/KpwgZcdk/living-root.jpg" alt="Living Root Bridge" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Living Root Bridge</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="card">
+            <img src="https://i.ibb.co/1GfQQGML/nohkalikai.jpg" alt="Nohkalikai Falls" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Nohkalikai Falls</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="card">
+            <img src="https://i.ibb.co/KpBXVgZL/seven-sisters.jpg" alt="Seven Sisters Falls" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Seven Sisters Falls</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="card">
+            <img src="https://i.ibb.co/wr0vNgg1/wrds.jpg" alt="Wards Lake" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Wards Lake</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="card">
+            <img src="https://i.ibb.co/whZknQ1X/prut.jpg" alt="Prut Falls" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Prut Falls</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="card">
+            <img src="https://i.ibb.co/mrpgdT0n/lyngkslar.jpg" alt="Lyngksiar Falls" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Lyngksiar Falls</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="card">
+            <img src="https://i.ibb.co/JjW0CtG2/thlu.jpg" alt="Thlu Muwi Falls" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Thlu Muwi Falls</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
-  <footer class="bg-blue-900 text-white py-4">
-    <div class="container mx-auto px-4 text-center">
-      <p>&copy; 2025 ICISML. All Rights Reserved.</p>
-      <div class="flex justify-center space-x-4 mt-2">
-        <a href="#" class="hover:text-gray-300">Twitter</a>
-        <a href="#" class="hover:text-gray-300">LinkedIn</a>
-        <a href="#" class="hover:text-gray-300">Facebook</a>
+  <footer class="bg-primary text-white py-4">
+    <div class="container text-center">
+      <p class="mb-1">&copy; 2025 ICISML. All Rights Reserved.</p>
+      <div>
+        <a href="#" class="text-white me-3">Twitter</a>
+        <a href="#" class="text-white me-3">LinkedIn</a>
+        <a href="#" class="text-white">Facebook</a>
       </div>
     </div>
   </footer>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
