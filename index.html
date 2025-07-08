@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ICISML 2026 - Home</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
   <style>
     .hero {
       position: relative;
@@ -32,7 +36,7 @@
     .gallery-section {
       padding: 2rem 0;
       background-color: #fff;
-      margin-left: 120px;
+
     }
     .gallery-section h2 {
       font-size: 1.75rem;
@@ -68,14 +72,17 @@
     
   </style>
 </head>
-<body class="bg-white">
+<body class="bg-white ">
 
   <!-- Navigation Bar -->
-  <header class="bg-blue-900 text-white">
+  <header class="bg-blue-800 text-white">
     <div class="container mx-auto flex justify-between items-center py-4 px-4">
       <!-- Logo / Title -->
       <div class="text-xl font-bold">
-        <a href="#">ICISML 2026</a>
+        <a href="#">
+          <img src="https://i.ibb.co/svVLg8k7/icsml-removebg-preview.png" alt="ICISML Logo" class="h-10">
+        </a>
+
       </div>
       
       <!-- Desktop Navigation -->
@@ -98,9 +105,17 @@
         class="md:hidden focus:outline-none"
         onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
       >
-        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-          <path d="M4 5h16M4 12h16M4 19h16"/>
+        <svg
+                class="w-6 h-6 text-white-800"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 5h16M4 12h16M4 19h16" />
         </svg>
+
       </button>
     </div>
   </header>
@@ -148,26 +163,51 @@
   </section>
 
       <!-- Our Partners Section -->
-  <section class="py-8 bg-gray-100">
+  <section class="py-12 bg-gray-100">
     <div class="container mx-auto px-4">
-      <h2 class="text-2xl font-bold mb-6 text-blue-900 text-center">Our Partners</h2>
-      <div class="flex flex-wrap justify-center gap-8">
-        <div class="w-60 h-30 flex items-center justify-center bg-white shadow-lg rounded-lg p-4">
-          <img src="https://www.nirfindia.org/Images/main-logo.png" alt="Partner 1" class="max-h-full max-w-full">
+      <h2 class="text-3xl font-bold mb-10 text-blue-900 text-center">Previous ICISML Conferences</h2>
+
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide flex items-center justify-center">
+            <div class="w-[720px] h-[360px] bg-white shadow-lg rounded-lg overflow-hidden">
+              <img src="https://i.ibb.co/gLrwHGdV/cf007443-0548-4db0-bb4e-6a716945685f.jpg" alt="ICISML 1" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="swiper-slide flex items-center justify-center">
+            <div class="w-[720px] h-[360px] bg-white shadow-lg rounded-lg overflow-hidden">
+              <img src="https://i.ibb.co/jXKH7NH/b9b2b1c2-3f45-4990-a07f-74476ff2bd87.jpg" alt="ICISML 2" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="swiper-slide flex items-center justify-center">
+            <div class="w-[720px] h-[360px] bg-white shadow-lg rounded-lg overflow-hidden">
+              <img src="https://i.ibb.co/Mk2TZt9f/706fa8a3-625c-485a-931e-2d5c330aa724.jpg" alt="ICISML 3" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="swiper-slide flex items-center justify-center">
+            <div class="w-[720px] h-[360px] bg-white shadow-lg rounded-lg overflow-hidden">
+              <img src="https://i.ibb.co/kVVdNw9Y/6230c7eb-edc7-4448-91e7-784c55458b9b.jpg" alt="ICISML 4" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="swiper-slide flex items-center justify-center">
+            <div class="w-[720px] h-[360px] bg-white shadow-lg rounded-lg overflow-hidden">
+              <img src="https://i.ibb.co/FLHzjDSF/60fe3a5c-65b2-4ad0-ac82-a67301bed48a.jpg" alt="ICISML 5" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="swiper-slide flex items-center justify-center">
+            <div class="w-[720px] h-[360px] bg-white shadow-lg rounded-lg overflow-hidden">
+              <img src="https://i.ibb.co/8nX7Gmvh/a45479cb-2359-470d-93c2-92575b07d3ec.jpg" alt="ICISML 6" class="w-full h-full object-cover" />
+            </div>
+          </div>
         </div>
-        <div class="w-60 h-30 flex items-center justify-center bg-white shadow-lg rounded-lg p-4">
-          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/Science_and_Engineering_Research_Board.png/280px-Science_and_Engineering_Research_Board.png" alt="Partner 2" class="max-h-full max-w-full">
-        </div>
-        <div class="w-60 h-30 flex items-center justify-center bg-white shadow-lg rounded-lg p-4">
-          <img src="https://www.aicte-india.org/sites/default/files/logo_new.png" alt="Partner 3" class="max-h-full max-w-full">
-        </div>
-        <div class="w-60 h-30 flex items-center justify-center bg-white shadow-lg rounded-lg p-4">
-          <img src="https://dst.gov.in/sites/all/modules/customs/cmf_content/assets/images/dst-logo1.jpg" alt="Partner 4" class="max-h-full max-w-full">
-        </div>
+
+        <div class="swiper-pagination mt-6"></div>
       </div>
     </div>
   </section>
-  
+
+
+
   <!-- Important Dates Section -->
   <section class="py-8 bg-white">
     <div class="container mx-auto px-4">
@@ -304,15 +344,37 @@ Nagaland University comprises 44 departments offering Undergraduate, Postgraduat
 
 
   <!-- Footer -->
-  <footer class="bg-blue-900 text-white py-4">
+  <footer class="bg-blue-800 text-white py-4 w-full bottom-0">
     <div class="container mx-auto px-4 text-center">
-      <p>&copy; 2025 ICISML. All Rights Reserved.</p>
-      <!-- <div class="flex justify-center space-x-4 mt-2">
-        <a href="#" class="hover:text-gray-300">Twitter</a>
-        <a href="#" class="hover:text-gray-300">LinkedIn</a>
-        <a href="#" class="hover:text-gray-300">Facebook</a>
-      </div> -->
+      <p>&copy; <span id="currentYear"></span> ICISML. All Rights Reserved.</p>
     </div>
   </footer>
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear()+1;
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      loopAdditionalSlides: 1,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 1,
+        }
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+
+  </script>
+
 </body>
 </html>
