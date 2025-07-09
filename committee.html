@@ -1,188 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ICISML 2026 - Committee</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ICISML 2026 - Committee</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100">
 
-  <!-- Navigation Bar -->
-  <header class="bg-blue-800 text-white">
-      <div class="container mx-auto flex justify-between items-center py-4 px-4">
-          <!-- Logo / Title -->
-          <div class="text-xl font-bold">
-              <a href="#">
-                  <img src="https://i.ibb.co/svVLg8k7/icsml-removebg-preview.png" alt="ICISML Logo" class="h-10">
-              </a>
+<!-- Navigation Bar -->
+<header class="bg-blue-800 text-white">
+    <div class="container mx-auto flex justify-between items-center py-4 px-4">
+        <div class="text-xl font-bold">
+            <a href="#">
+                <img src="https://i.ibb.co/svVLg8k7/icsml-removebg-preview.png" alt="ICISML Logo" class="h-10">
+            </a>
+        </div>
+        <nav class="hidden md:block">
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="hover:text-gray-300">Home</a></li>
+                <li><a href="call-for-papers.html" class="hover:text-gray-300">Call for Papers</a></li>
+                <li><a href="publication.html" class="hover:text-gray-300">Publication</a></li>
+                <li><a href="registration.html" class="hover:text-gray-300">Registration</a></li>
+                <li><a href="authors.html" class="hover:text-gray-300">Authors</a></li>
+                <li><a href="speakers.html" class="hover:text-gray-300">Speakers</a></li>
+                <li><a href="committee.html" class="hover:text-gray-300 underline">Committee</a></li>
+                <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
+            </ul>
+        </nav>
+        <button
+                class="md:hidden focus:outline-none"
+                onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+        >
+            <svg class="w-6 h-6 text-white-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 5h16M4 12h16M4 19h16"/>
+            </svg>
+        </button>
+    </div>
+</header>
 
-          </div>
-
-          <!-- Desktop Navigation -->
-          <nav class="hidden md:block">
-              <ul class="flex space-x-6">
-                  <li><a href="index.html" class="hover:text-gray-300">Home</a></li>
-
-                  <li><a href="call-for-papers.html" class="hover:text-gray-300">Call for Papers</a></li>
-                  <li><a href="publication.html" class="hover:text-gray-300">Publication</a></li>
-                  <li><a href="registration.html" class="hover:text-gray-300">Registration</a></li>
-                  <li><a href="authors.html" class="hover:text-gray-300">Authors</a></li>
-                  <li><a href="speakers.html" class="hover:text-gray-300">Speakers</a></li>
-                  <li><a href="committee.html" class="hover:text-gray-300 underline">Committee</a></li>
-                  <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
-              </ul>
-          </nav>
-
-          <!-- Mobile Menu Button -->
-          <button
-                  class="md:hidden focus:outline-none"
-                  onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
-          >
-              <svg
-                      class="w-6 h-6 text-white-800"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-              >
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 5h16M4 12h16M4 19h16" />
-              </svg>
-
-          </button>
-      </div>
-  </header>
-
-  <!-- Mobile Navigation -->
-  <div id="mobile-menu" class="bg-blue-900 text-white hidden">
+<!-- Mobile Navigation -->
+<div id="mobile-menu" class="bg-blue-900 text-white hidden">
     <ul class="p-4 space-y-2">
-      <li><a href="index.html" class="block hover:bg-blue-800 p-2">Home</a></li>
-      <li><a href="call-for-papers.html" class="block hover:bg-blue-800 p-2">Call for Papers</a></li>
-      <li><a href="publication.html" class="block hover:bg-blue-800 p-2">Publication</a></li>
-      <li><a href="registration.html" class="block hover:bg-blue-800 p-2">Registration</a></li>
-      <li><a href="authors.html" class="block hover:bg-blue-800 p-2">Authors</a></li>
-      <li><a href="speakers.html" class="block hover:bg-blue-800 p-2">Speakers</a></li>
-      <li><a href="committee.html" class="block hover:bg-blue-800 p-2 underline">Committee</a></li>
-      <li><a href="contact.html" class="block hover:bg-blue-800 p-2">Contact</a></li>
+        <li><a href="index.html" class="block hover:bg-blue-800 p-2">Home</a></li>
+        <li><a href="call-for-papers.html" class="block hover:bg-blue-800 p-2">Call for Papers</a></li>
+        <li><a href="publication.html" class="block hover:bg-blue-800 p-2">Publication</a></li>
+        <li><a href="registration.html" class="block hover:bg-blue-800 p-2">Registration</a></li>
+        <li><a href="authors.html" class="block hover:bg-blue-800 p-2">Authors</a></li>
+        <li><a href="speakers.html" class="block hover:bg-blue-800 p-2">Speakers</a></li>
+        <li><a href="committee.html" class="block hover:bg-blue-800 p-2 underline">Committee</a></li>
+        <li><a href="contact.html" class="block hover:bg-blue-800 p-2">Contact</a></li>
     </ul>
-  </div>
+</div>
 
-  <!-- Page Title -->
-  <section class="bg-white py-10 shadow-sm">
+<!-- Page Title -->
+<section class="bg-white py-10 shadow-sm">
     <div class="container mx-auto px-4 text-center">
-      <h1 class="text-3xl md:text-4xl font-bold text-blue-900 mb-2">Organizing Committee</h1>
-      <p class="text-gray-700 max-w-2xl mx-auto">
-        Meet the dedicated team behind ICISML 2026. Our committee comprises renowned experts, professionals, and academicians committed to delivering a world-class conference.
-      </p>
+        <h1 class="text-3xl md:text-4xl font-bold text-blue-900 mb-2">Organizing Committee</h1>
+        <p class="text-gray-700 max-w-2xl mx-auto">
+            Meet the dedicated team behind ICISML 2026. Our committee comprises renowned experts, professionals, and academicians committed to delivering a world-class conference.
+        </p>
     </div>
-  </section>
+</section>
 
-  <!-- Committee Sections -->
-  <main class="pb-10">
+<!-- Committee Sections -->
+<main class="pb-10">
     <div class="container mx-auto px-4">
-<br>
-        <section class="py-6">
+        <br>
+
+        <section class="py-6 committee-section">
             <h2 class="text-2xl font-bold text-blue-900 mb-4">Patron</h2>
-            <p class="text-gray-700"><strong>Professor Jagadish K. Patnaik</strong>,  Vice-Chancellor Nagaland University, India</p>
+            <ul class="list-disc list-inside text-gray-700">
+                <li><strong>Professor Jagadish K. Patnaik</strong>, Vice-Chancellor Nagaland University, India</li>
+            </ul>
         </section>
-      <!-- Program Chair -->
-      <section class="py-6 bg-gray-50 rounded-lg px-4">
-        <h2 class="text-2xl font-bold text-blue-900 mb-4">Program Chair</h2>
-        <p class="text-gray-700"><strong>Dr. Nonita Sharma</strong>, IGDTUW, New Delhi, India</p>
-      </section>
 
-      <!-- Program Co-Chair -->
-      <section class="py-6">
-        <h2 class="text-2xl font-bold text-blue-900 mb-4">Program Co-Chair</h2>
-        <p class="text-gray-700"><strong>Monika Mangla</strong>, Dwaradas J Sanghvi College of Engineering, Mumbai, India</p>
-      </section>
+        <section class="py-6 committee-section">
+            <h2 class="text-2xl font-bold text-blue-900 mb-4">Program Chair</h2>
+            <ul class="list-disc list-inside text-gray-700">
+                <li><strong>Dr. Nonita Sharma</strong>, IGDTUW, New Delhi, India</li>
+            </ul>
+        </section>
 
-      <!-- General Chair -->
-      <section class="py-6 bg-gray-50 rounded-lg px-4">
-        <h2 class="text-2xl font-bold text-blue-900 mb-4">General Chair</h2>
-        <p class="text-gray-700"><strong>Dr. Tanupriya Choudhury</strong>, University of Petroleum and Energy Studies (UPES), Dehradun, India</p>
-      </section>
+        <section class="py-6 committee-section">
+            <h2 class="text-2xl font-bold text-blue-900 mb-4">Program Co-Chair</h2>
+            <ul class="list-disc list-inside text-gray-700">
+                <li><strong>Monika Mangla</strong>, Dwaradas J Sanghvi College of Engineering, Mumbai, India</li>
+            </ul>
+        </section>
 
-      <!-- General Co-Chair -->
-      <section class="py-6">
-        <h2 class="text-2xl font-bold text-blue-900 mb-4">General Co-Chair</h2>
-        <p class="text-gray-700"><strong>Dr. Sachi Nandan Mohanty</strong>, VIT-AP University, Amaravati, Andhra Pradesh, India</p>
-      </section>
+        <section class="py-6 committee-section">
+            <h2 class="text-2xl font-bold text-blue-900 mb-4">General Chair</h2>
+            <ul class="list-disc list-inside text-gray-700">
+                <li><strong>Dr. Tanupriya Choudhury</strong>, UPES, Dehradun, India</li>
+            </ul>
+        </section>
 
-      <!-- Web Chairs -->
-      <section class="py-6 bg-gray-50 rounded-lg px-4">
-        <h2 class="text-2xl font-bold text-blue-900 mb-4">Web Chairs</h2>
-        <p class="text-gray-700"><strong>Mr. Rahul Nayak</strong>, Mighty Monkey Media LLP, Guntur, Andhra Pradesh, India</p>
-          <p class="text-gray-700"><strong>Mr. Nihaal Santosh Shindhe</strong>, Mighty Monkey Media LLP, Guntur, Andhra Pradesh, India</p>
-      </section>
+        <section class="py-6 committee-section">
+            <h2 class="text-2xl font-bold text-blue-900 mb-4">General Co-Chair</h2>
+            <ul class="list-disc list-inside text-gray-700">
+                <li><strong>Dr. Sachi Nandan Mohanty</strong>, VIT-AP University, Amaravati, Andhra Pradesh, India</li>
+            </ul>
+        </section>
 
-      <!-- Publicity and Social Media Chairs -->
-      <section class="py-6">
-        <h2 class="text-2xl font-bold text-blue-900 mb-4">Publicity and Social Media Chairs</h2>
-        <ul class="list-disc list-inside text-gray-700 space-y-2">
-          <li><strong>Dr. Princy Randhawa</strong>, Manipal University, Jaipur, India</li>
-          <li><strong>Dr. Shreyas Rajendra Hole</strong>, Dayananda Sagar University, Bengaluru, India</li>
-          <li><strong>Dr. Priya Gupta</strong>, ABVSME, JNU New Delhi, India</li>
-          <li><strong>Mr. Bhrugumalla L V S Aditya</strong>, VIT-AP University, Amaravati, Andhra Pradesh, India</li>
-        </ul>
-      </section>
+        <section class="py-6 committee-section">
+            <h2 class="text-2xl font-bold text-blue-900 mb-4">Technical Program Chair</h2>
+            <ul class="list-disc list-inside text-gray-700">
+                <li><strong>Dr. Biswaranjan Acharya</strong>, Marwadi University, Rajkot, Gujarat, India</li>
+            </ul>
+        </section>
 
-      <!-- Workshop Chairs -->
-      <section class="py-6 bg-gray-50 rounded-lg px-4">
-        <h2 class="text-2xl font-bold text-blue-900 mb-4">Workshop Chairs</h2>
-        <p class="text-gray-700"><strong>Dr. Deepa Jose</strong>, KCG College of Engineering, Chennai, India</p>
-        <p class="text-gray-700"><strong>Dr. Sirisha Potluri </strong>, KL University, Hyderabad, India</p>
-      </section>
+        <section class="py-6 committee-section">
+            <h2 class="text-2xl font-bold text-blue-900 mb-4">Web Chairs</h2>
+            <ul class="list-disc list-inside text-gray-700">
+                <li><strong>Mr. Rahul Nayak</strong>, Mighty Monkey Media LLP, Guntur, Andhra Pradesh, India</li>
+                <li><strong>Mr. Nihaal Santosh Shindhe</strong>, Mighty Monkey Media LLP, Guntur, Andhra Pradesh, India</li>
+            </ul>
+        </section>
 
-      <!-- Finance Chairs -->
-      <section class="py-6">
-        <h2 class="text-2xl font-bold text-blue-900 mb-4">Finance Chairs</h2>
-        <p class="text-gray-700"><strong>Mr. Nagaraju</strong>, VIT-AP University, Amaravati, Andhra Pradesh, India</p>
-      </section>
+        <section class="py-6 committee-section">
+            <h2 class="text-2xl font-bold text-blue-900 mb-4">Publicity and Social Media Chairs</h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li><strong>Dr. Princy Randhawa</strong>, Manipal University, Jaipur, India</li>
+                <li><strong>Dr. Shreyas Rajendra Hole</strong>, Dayananda Sagar University, Bengaluru, India</li>
+                <li><strong>Dr. Priya Gupta</strong>, ABVSME, JNU New Delhi, India</li>
+                <li><strong>Mr. Bhrugumalla L V S Aditya</strong>, VIT-AP University, Amaravati, Andhra Pradesh, India</li>
+            </ul>
+        </section>
 
-      <!-- Publication Chairs -->
-      <section class="py-6 bg-gray-50 rounded-lg px-4">
-        <h2 class="text-2xl font-bold text-blue-900 mb-4">Publication Chairs</h2>
-        <ul class="list-disc list-inside text-gray-700 space-y-2">
-          <li><strong>Dr. Suneeta Satapathy</strong>, SOA University, Odisha, India</li>
-          <li><strong>Dr. Shweta Sankhwar</strong>, Maitreyi College, University of Delhi, India</li>
-          <li><strong>Dr. P Revanth Kumar</strong>, Malla Reddy University, Hyderabad, India</li>
-        </ul>
-      </section>
+        <section class="py-6 committee-section">
+            <h2 class="text-2xl font-bold text-blue-900 mb-4">Workshop Chairs</h2>
+            <ul class="list-disc list-inside text-gray-700">
+                <li><strong>Dr. Deepa Jose</strong>, KCG College of Engineering, Chennai, India</li>
+                <li><strong>Dr. Sirisha Potluri</strong>, KL University, Hyderabad, India</li>
+            </ul>
+        </section>
 
-      <!-- Registration Chairs -->
-      <section class="py-6">
-        <h2 class="text-2xl font-bold text-blue-900 mb-4">Registration Chairs</h2>
-        <p class="text-gray-700"><strong>Dr. A Pramod Kumar</strong>, CMR Engineering College, Hyderabad, India</p>
-      </section>
+        <section class="py-6 committee-section">
+            <h2 class="text-2xl font-bold text-blue-900 mb-4">Finance Chairs</h2>
+            <ul class="list-disc list-inside text-gray-700">
+                <li><strong>Mr. Nagaraju</strong>, VIT-AP University, Amaravati, Andhra Pradesh, India</li>
+            </ul>
+        </section>
 
-      <!-- Session Management Chair -->
-      <section class="py-6 bg-gray-50 rounded-lg px-4">
-        <h2 class="text-2xl font-bold text-blue-900 mb-4">Session Management Chair</h2>
-        <p class="text-gray-700"><strong>Dr. Nidhi Agarwal</strong>, Galgotias University, Greater Noida, India</p>
-      </section>
+        <section class="py-6 committee-section">
+            <h2 class="text-2xl font-bold text-blue-900 mb-4">Publication Chairs</h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li><strong>Dr. Suneeta Satapathy</strong>, SOA University, Odisha, India</li>
+                <li><strong>Dr. Shweta Sankhwar</strong>, Maitreyi College, University of Delhi, India</li>
+                <li><strong>Dr. P Revanth Kumar</strong>, Malla Reddy University, Hyderabad, India</li>
+            </ul>
+        </section>
 
-      <!-- International Liaison Chairs -->
-      <section class="py-6">
-        <h2 class="text-2xl font-bold text-blue-900 mb-4">International Liaison Chairs</h2>
-        <ul class="list-disc list-inside text-gray-700 space-y-2">
-          <li><strong>Dr. Mohamed Sirajudeen Yoosuf</strong>, Modern College of Business and Science, Muscat, Oman.</li>
-          <li><strong>Mr. Yagnesh Challagundla</strong>, University of Florida, USA</li>
-        </ul>
-      </section>
+        <section class="py-6 committee-section">
+            <h2 class="text-2xl font-bold text-blue-900 mb-4">Registration Chairs</h2>
+            <ul class="list-disc list-inside text-gray-700">
+                <li><strong>Dr. A Pramod Kumar</strong>, CMR Engineering College, Hyderabad, India</li>
+            </ul>
+        </section>
+
+        <section class="py-6 committee-section">
+            <h2 class="text-2xl font-bold text-blue-900 mb-4">Session Management Chair</h2>
+            <ul class="list-disc list-inside text-gray-700">
+                <li><strong>Dr. Nidhi Agarwal</strong>, Galgotias University, Greater Noida, India</li>
+            </ul>
+        </section>
+
+        <section class="py-6 committee-section">
+            <h2 class="text-2xl font-bold text-blue-900 mb-4">International Liaison Chairs</h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li><strong>Dr. Mohamed Sirajudeen Yoosuf</strong>, Modern College of Business and Science, Muscat, Oman.</li>
+                <li><strong>Mr. Yagnesh Challagundla</strong>, University of Florida, USA</li>
+            </ul>
+        </section>
 
     </div>
-  </main>
+</main>
 
-  <!-- Footer -->
-  <footer class="bg-blue-800 text-white py-4 w-full  bottom-0">
-      <div class="container mx-auto px-4 text-center">
-          <p>&copy; <span id="currentYear"></span> ICISML. All Rights Reserved.</p>
-      </div>
-  </footer>
-  <script>
-      document.getElementById('currentYear').textContent = new Date().getFullYear()+1;
-  </script>
+<!-- Footer -->
+<footer class="bg-blue-800 text-white py-4 w-full bottom-0">
+    <div class="container mx-auto px-4 text-center">
+        <p>&copy; <span id="currentYear"></span> ICISML. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<!-- Auto year and alternating section background -->
+<script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear() + 1;
+
+    document.querySelectorAll('.committee-section').forEach((section, index) => {
+        if (index % 2 !== 0) {
+            section.classList.add('bg-gray-50', 'rounded-lg', 'px-4');
+        }
+    });
+</script>
 </body>
 </html>
