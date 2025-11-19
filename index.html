@@ -6,73 +6,62 @@
   <title>ICISML 2026 - Home</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
   />
   <style>
-    .hero {
-      position: relative;
-      height: 100vh;
-      background-image: url('./icisml.jpeg');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #fff;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
+    :root { --ticker-height: 44px; }
+
+    /* Ticker */
+    .ticker {
+      position: fixed;
       top: 0;
       left: 0;
-      height: 100%;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 1;
+      right: 0;
+      height: var(--ticker-height);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      z-index: 60;
+      background: #991b1b; /* dark red */
+      color: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+      font-weight: 600;
     }
-    /* Gallery Section */
-    .gallery-section {
-      padding: 2rem 0;
-      background-color: #fff;
+    .ticker__track {
+      display: inline-block;
+      white-space: nowrap;
+      will-change: transform;
+      animation: ticker-scroll 16s linear infinite;
+      padding-left: 100%;
+    }
+    @keyframes ticker-scroll {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .ticker__track { animation: none; transform: translateX(0); padding-left: 1rem; }
+    }
 
-    }
-    .gallery-section h2 {
-      font-size: 1.75rem;
-      color: #2a4365;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-    .gallery-grid {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-    .gallery-item {
-      text-align: center;
-    }
-    .gallery-item img {
-      width: 100%;
-      height: 16rem;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1),
-                  0 2px 4px -1px rgba(0,0,0,0.06);
-      transition: transform 0.3s ease;
-    }
-    .gallery-item img:hover {
-      transform: scale(1.02);
-    }
-    .gallery-item p {
-      margin-top: 0.5rem;
-      font-size: 1.125rem;
-      color: #4a5568;
-    }
-    
+    /* push page content below the fixed ticker */
+    body { padding-top: calc(var(--ticker-height) + 0px); }
+
+    /* strike helper for better visibility */
+    .strike { text-decoration-thickness: 3px; text-decoration-style: solid; text-decoration-color: rgba(220,38,38,0.9); }
+
+    /* small style adjustments for hero overlay */
+    .hero::before { content: ""; position: absolute; inset: 0; background-color: rgba(0,0,0,0.45); z-index: 1; }
   </style>
 </head>
-<body class="bg-white ">
+<body class="bg-white">
+
+  <!-- TOP TICKER: PAPER SUBMISSION IS CLOSED -->
+  <div class="ticker" role="status" aria-live="polite">
+    <div class="ticker__track" aria-hidden="true">
+      PAPER SUBMISSION IS CLOSED — PAPER SUBMISSION IS CLOSED — PAPER SUBMISSION IS CLOSED — PAPER SUBMISSION IS CLOSED
+    </div>
+    <div class="sr-only">Paper submission is closed.</div>
+  </div>
 
   <!-- Navigation Bar -->
   <header class="bg-blue-800 text-white">
@@ -82,14 +71,12 @@
         <a href="#">
           <img src="./icsml.jpg" alt="ICISML Logo" class="h-10">
         </a>
-
       </div>
-      
+
       <!-- Desktop Navigation -->
       <nav class="hidden md:block">
         <ul class="flex space-x-6">
           <li><a href="index.html" class="hover:text-gray-300 underline">Home</a></li>
-
           <li><a href="call-for-papers.html" class="hover:text-gray-300">Call for Papers</a></li>
           <li><a href="publication.html" class="hover:text-gray-300">Publication</a></li>
           <li><a href="registration.html" class="hover:text-gray-300">Registration</a></li>
@@ -99,23 +86,25 @@
           <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
         </ul>
       </nav>
-      
+
       <!-- Mobile Menu Button -->
       <button
         class="md:hidden focus:outline-none"
         onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
       >
         <svg
-                class="w-6 h-6 text-white-800"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6 text-white-800"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 5h16M4 12h16M4 19h16" />
         </svg>
-
+        <span class="sr-only">Open mobile menu</span>
       </button>
     </div>
   </header>
@@ -135,34 +124,27 @@
   </div>
 
   <!-- Hero / CTA Section -->
-  <section class="relative hero">
-    <!-- Dark Overlay -->
-    <div class="absolute inset-0 bg-gray bg-opacity-30"></div>
-    
-    <!-- Hero Content -->
-    <div class="relative z-10 text-center text-white max-w-2xl px-4">
+  <section class="relative hero h-screen bg-cover bg-center" style="background-image: url('./icisml.jpeg');">
+    <!-- Dark Overlay provided by CSS pseudo element -->
+    <div class="relative z-10 text-center text-white max-w-2xl px-4" style="z-index:2;">
       <!-- Logo (optional) -->
       <img src="https://upload.wikimedia.org/wikipedia/en/8/85/Nagaland_University_Logo.png" alt="NITM Logo" class="mx-auto mb-4 w-24 h-auto" />
-      
       <h1 class="text-3xl md:text-5xl font-bold mb-4">
         6th - International Conference on Intelligent Systems and Machine Learning (Hybrid Mode)
       </h1>
       <p class="text-xl md:text-2xl mb-2">24-25 February, 2026</p>
-      <p class="text-xl md:text-2xl mb-6">Nagaland University,India</p>
-      
+      <p class="text-xl md:text-2xl mb-6">Nagaland University, India</p>
+
       <!-- CTA Buttons -->
       <div class="space-x-4">
-<!--         <a href="Conference-Brochure-_3-10-24.pdf"" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md">
-          Brochure
-        </a> -->
-        <a href="https://cmt3.research.microsoft.com/ICISML2026/" class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-md">
+        <a href="https://cmt3.research.microsoft.com/ICISML2026/" target="_blank" rel="noopener" class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-md">
           Submit Your Paper Using CMT
         </a>
       </div>
     </div>
   </section>
 
-      <!-- Our Partners Section -->
+  <!-- Our Partners / Swiper -->
   <section class="py-12 bg-gray-100">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-10 text-blue-900 text-center">Previous ICISML Conferences</h2>
@@ -206,8 +188,6 @@
     </div>
   </section>
 
-
-
   <!-- Important Dates Section -->
   <section class="py-8 bg-white">
     <div class="container mx-auto px-4">
@@ -215,127 +195,109 @@
       <div class="overflow-x-auto">
         <table class="table-auto w-full text-left bg-white shadow-lg rounded-lg">
           <thead>
-          <tr class="bg-blue-50 border-b border-gray-200">
-            <th class="px-4 py-2 font-semibold text-gray-700">Event</th>
-            <th class="px-4 py-2 font-semibold text-gray-700">Date</th>
-          </tr>
+            <tr class="bg-blue-50 border-b border-gray-200">
+              <th class="px-4 py-2 font-semibold text-gray-700">Event</th>
+              <th class="px-4 py-2 font-semibold text-gray-700">Date</th>
+            </tr>
           </thead>
           <tbody>
-          <tr class="border-b border-gray-200">
-            <td class="px-4 py-2">Due Date of Paper Submission</td>
-            <td class="px-4 py-2">17 November, 2025</td>
-          </tr>
-          <tr class="border-b border-gray-200 bg-gray-50">
-            <td class="px-4 py-2">Notification</td>
-            <td class="px-4 py-2">10 December, 2025</td>
-          </tr>
-          <tr class="border-b border-gray-200">
-            <td class="px-4 py-2">Last Date of Registration</td>
-            <td class="px-4 py-2">5 January, 2026</td>
-          </tr>
-          <tr class="border-b border-b bg-gray-200">
-            <td class="px-4 py-2">Camera Ready Paper Submission</td>
-            <td class="px-4 py-2">10 January, 2026</td>
-          </tr>
-          <tr class="border-b border-gray-200 bg-gray-50">
-            <td class="px-4 py-2">Pre Conference Tutorial</td>
-            <td class="px-4 py-2">23 February, 2026</td>
-          </tr>
-          <tr>
-            <td class="px-4 py-2">Conference Date</td>
-            <td class="px-4 py-2">24-25 February, 2026</td>
-          </tr>
+            <tr class="border-b border-gray-200">
+              <td class="px-4 py-2">Due Date of Paper Submission</td>
+              <td class="px-4 py-2">
+                <!-- Red strike-through + Closed badge -->
+                <span class="strike text-red-600 font-semibold line-through">17 November, 2025</span>
+                <span class="ml-2 inline-block bg-red-100 text-red-800 text-xs px-2 py-1 rounded">Closed</span>
+              </td>
+            </tr>
+            <tr class="border-b border-gray-200 bg-gray-50">
+              <td class="px-4 py-2">Notification</td>
+              <td class="px-4 py-2">10 December, 2025</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="px-4 py-2">Last Date of Registration</td>
+              <td class="px-4 py-2">5 January, 2026</td>
+            </tr>
+            <tr class="border-b bg-gray-200">
+              <td class="px-4 py-2">Camera Ready Paper Submission</td>
+              <td class="px-4 py-2">10 January, 2026</td>
+            </tr>
+            <tr class="border-b border-gray-200 bg-gray-50">
+              <td class="px-4 py-2">Pre Conference Tutorial</td>
+              <td class="px-4 py-2">23 February, 2026</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2">Conference Date</td>
+              <td class="px-4 py-2">24-25 February, 2026</td>
+            </tr>
           </tbody>
         </table>
       </div>
-
     </div>
   </section>
 
-  <!-- About Central University of Nagaland Section -->
+  <!-- About Nagaland University -->
   <section class="py-8 bg-gray-50">
-  <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-    <!-- Image with Rounded Borders -->
-    <div class="md:w-1/2 mb-4 md:mb-0">
-      <img src="https://images.shiksha.com/mediadata/images/1492062779php2RTzjc.png" alt=" University of Nagaland" class="rounded-lg shadow-lg w-full">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-4 md:mb-0">
+        <img src="https://images.shiksha.com/mediadata/images/1492062779php2RTzjc.png" alt=" University of Nagaland" class="rounded-lg shadow-lg w-full">
+      </div>
+      <div class="md:w-1/2 md:pl-8">
+        <h2 class="text-2xl font-bold mb-4 text-blue-900">About Nagaland University</h2>
+        <p class="mb-4 text-gray-700 text-justify">
+          Nagaland University, the 13th Central University and the only Central University in Nagaland was established based on the Act of Parliament of India and received the assent of the President of India on 20th October 1989 as THE NAGALAND UNIVERSITY ACT 1989 (No. 35 of 1989) and came into force as notified in THE GAZETTE OF INDIA EXTRAORDINARY PART-II SECTION-1 in October 1989 published by the Ministry of Law and Justice (Legislative Department), New Delhi.
+        </p>
+      </div>
     </div>
-    <!-- Text Information -->
-    <div class="md:w-1/2 md:pl-8">
-      <h2 class="text-2xl font-bold mb-4 text-blue-900">About Nagaland University</h2>
-      <p class="mb-4 text-gray-700 text-justify">
-        Nagaland University, the 13th Central University and the only Central University in Nagaland was established based on the Act of Parliament of India and received the assent of the President of India on 20th October 1989 as THE NAGALAND UNIVERSITY ACT 1989 (No. 35 of 1989) and came into force as notified in THE GAZETTE OF INDIA EXTRAORDINARY PART-II SECTION-1 in October 1989 published by the Ministry of Law and Justice (Legislative Department), New Delhi.
-
-        The University came into being on September 6, 1994 having jurisdiction over the entire state of Nagaland. Prior to this, Nagaland had been in the catchment area of North Eastern Hill University (NEHU), with Kohima designated as one of the campuses of NEHU along with SASRD-Medziphema. With the establishment of Nagaland University, the two erstwhile campuses inherited from NEHU as well as the colleges affiliated to it fell within the jurisdiction of Nagaland University. The nascent University had to go through many teething problems initially. The Headquarters of the University, i.e. Lumami, as per the Act could not immediately accommodate the needful so as to start functioning as Headquarters. Hence, for nearly a decade and half Nagaland University had been functioning from Kohima as the interim Headquarters of the University. Meanwhile, the establishment of the academic departments was sanctioned by the Government in the year 1997. All the new departments had to be located at Lumami and started functioning with Kohima still as the interim Headquarters. Constructional activities started earnestly making it fit for academic pursuits at the Headquarters in the best possible way. Upon the completion of new constructions to a reasonable stage, the shifting of interim arrangement at Kohima to Lumami took place in the mid year of 2010.
-
-        At present the University has three campuses, viz. (i) Headquarters at Lumami in Zunheboto district (ii) Kohima Campus at Meriema in Kohima district (iii) Medziphema Campus (School of Agricultural Sciences) at Medziphema in Dimapur district. The erstwhile temporary campus at Dimapur (School of Engineering & Technology) has been shifted to Kohima in 2024. There are 44 departments offering Undergraduate and Postgraduate and Ph.D. programmes in different disciplines of Arts, Commerce, Sciences, Agricultural Sciences, Engineering & Technology and Management streams. There are 69 colleges from all over the state of Nagaland currently affiliated to Nagaland University.
-      </p>
-    </div>
-  </div>
-</section>
+  </section>
 
   <section class="py-6 bg-gray-100">
     <div class="container mx-auto px-4 text-sm text-gray-700 text-center max-w-3xl">
       <p>
-        The <a href="https://cmt3.research.microsoft.com/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Microsoft CMT</a> service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
+        The <a href="https://cmt3.research.microsoft.com/" target="_blank" rel="noopener" class="text-blue-600 underline hover:text-blue-800">Microsoft CMT</a> service was used for managing the peer-review process for this conference.
       </p>
     </div>
   </section>
 
-
- <!-- Gallery Section (3 x 4 Responsive Grid) -->
-<!-- Gallery Section (Responsive 3x4 Grid for Places near Central University of Nagaland) -->
-<section class="gallery-section py-16 bg-white-100">
-  <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-3xl font-extrabold text-blue-900 text-center mb-12">Explore Nagaland</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      
-      <!-- Gallery Item -->
-      <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-        <img src="https://nagalandtribune.in/wp-content/uploads/2023/09/Longkhum-Village-Launches-Tourism-Website-to-Boost-Tourism-and-Connectivity-1.jpg" alt="Longkhum Village" class="w-full h-52 object-cover transition-transform duration-300 hover:scale-105">
-        <div class="p-4 text-center font-medium text-gray-800">Longkhum Village</div>
+  <!-- Gallery Section -->
+  <section class="gallery-section py-16 bg-white-100">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-extrabold text-blue-900 text-center mb-12">Explore Nagaland</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+          <img src="https://nagalandtribune.in/wp-content/uploads/2023/09/Longkhum-Village-Launches-Tourism-Website-to-Boost-Tourism-and-Connectivity-1.jpg" alt="Longkhum Village" class="w-full h-52 object-cover transition-transform duration-300 hover:scale-105">
+          <div class="p-4 text-center font-medium text-gray-800">Longkhum Village</div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGvdS5H_CLbqheEwa_tZc7JHnfLYp85mi2LQ&s" alt="Ungma Village" class="w-full h-52 object-cover transition-transform duration-300 hover:scale-105">
+          <div class="p-4 text-center font-medium text-gray-800">Ungma Village</div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+          <img src="https://s7ap1.scene7.com/is/image/incredibleindia/dzukou-valley-kohima-nagaland-attr-hero-1?qlt=82&ts=1727012411648" alt="Dzukou Valley" class="w-full h-52 object-cover transition-transform duration-300 hover:scale-105">
+          <div class="p-4 text-center font-medium text-gray-800">Dzukou Valley</div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+          <img src="https://static.toiimg.com/photo/96145044.cms" alt="Mount Saramati" class="w-full h-52 object-cover transition-transform duration-300 hover:scale-105">
+          <div class="p-4 text-center font-medium text-gray-800">Mount Saramati</div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+          <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQ_R-Vo0kPgcJr8A9Yq_OQW0WOej2Z5UQ7MNpizyiNJnCZW0b_-0yFJA_BXJ7wwWHLJ0amAVR_sO-VwG2dORbc9AcHTflqaBjShFFWd44c" alt="Mokokchung Town" class="w-full h-52 object-cover transition-transform duration-300 hover:scale-105">
+          <div class="p-4 text-center font-medium text-gray-800">Mokokchung Town</div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+          <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq7mjDhadrJCiuTZ0Err4yHZ6_t26-0WJXRSzVK3w4ivbGJVmczzr-knBA4yUR6u8-f0ZGtrRYRunkxA5TDmAn-AO8ZOF7b1DNrBZ0DQ-U3X60v1T12-lct_fxwHfXUXnv9dMxmvA=w270-h312-n-k-no" alt="Japfu Peak" class="w-full h-52 object-cover transition-transform duration-300 hover:scale-105">
+          <div class="p-4 text-center font-medium text-gray-800">Japfu Peak</div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+          <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTcFJNaGJ42WXqxLx0FGlBuy5ck3w_7h_InIajBXTVeiRO86khdqMetX0ezkwRSsZuvuyk5qazI3YC02wtDFy1s6p70doPjmEApaotRqg" alt="Khonoma Village" class="w-full h-52 object-cover transition-transform duration-300 hover:scale-105">
+          <div class="p-4 text-center font-medium text-gray-800">Khonoma Village</div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+          <img src="https://cdn.s3waas.gov.in/s317c276c8e723eb46aef576537e9d56d0/uploads/bfi_thumb/2018072781-olw703v7orqatee4lw507s9ixju7z70fwlpkltgpl6.png" alt="Tuophema Tourist Village" class="w-full h-52 object-cover transition-transform duration-300 hover:scale-105">
+          <div class="p-4 text-center font-medium text-gray-800">Touphema Tourist Village</div>
+        </div>
       </div>
-
-      <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGvdS5H_CLbqheEwa_tZc7JHnfLYp85mi2LQ&s" alt="Ungma Village" class="w-full h-52 object-cover transition-transform duration-300 hover:scale-105">
-        <div class="p-4 text-center font-medium text-gray-800">Ungma Village</div>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-        <img src="https://s7ap1.scene7.com/is/image/incredibleindia/dzukou-valley-kohima-nagaland-attr-hero-1?qlt=82&ts=1727012411648" alt="Dzukou Valley" class="w-full h-52 object-cover transition-transform duration-300 hover:scale-105">
-        <div class="p-4 text-center font-medium text-gray-800">Dzukou Valley</div>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-        <img src="https://static.toiimg.com/photo/96145044.cms" alt="Mount Saramati" class="w-full h-52 object-cover transition-transform duration-300 hover:scale-105">
-        <div class="p-4 text-center font-medium text-gray-800">Mount Saramati</div>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-        <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQ_R-Vo0kPgcJr8A9Yq_OQW0WOej2Z5UQ7MNpizyiNJnCZW0b_-0yFJA_BXJ7wwWHLJ0amAVR_sO-VwG2dORbc9AcHTflqaBjShFFWd44c" alt="Mokokchung Town" class="w-full h-52 object-cover transition-transform duration-300 hover:scale-105">
-        <div class="p-4 text-center font-medium text-gray-800">Mokokchung Town</div>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-        <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq7mjDhadrJCiuTZ0Err4yHZ6_t26-0WJXRSzVK3w4ivbGJVmczzr-knBA4yUR6u8-f0ZGtrRYRunkxA5TDmAn-AO8ZOF7b1DNrBZ0DQ-U3X60v1T12-lct_fxwHfXUXnv9dMxmvA=w270-h312-n-k-no" alt="Japfu Peak" class="w-full h-52 object-cover transition-transform duration-300 hover:scale-105">
-        <div class="p-4 text-center font-medium text-gray-800">Japfu Peak</div>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-        <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTcFJNaGJ42WXqxLx0FGlBuy5ck3w_7h_InIajBXTVeiRO86khdqMetX0ezkwRSsZuvuyk5qazI3YC02wtDFy1s6p70doPjmEApaotRqg" alt="Khonoma Village" class="w-full h-52 object-cover transition-transform duration-300 hover:scale-105">
-        <div class="p-4 text-center font-medium text-gray-800">Khonoma Village</div>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-        <img src="https://cdn.s3waas.gov.in/s317c276c8e723eb46aef576537e9d56d0/uploads/bfi_thumb/2018072781-olw703v7orqatee4lw507s9ixju7z70fwlpkltgpl6.png" alt="Tuophema Tourist Village" class="w-full h-52 object-cover transition-transform duration-300 hover:scale-105">
-        <div class="p-4 text-center font-medium text-gray-800">Touphema Tourist Village</div>
-      </div>
-
     </div>
-  </div>
-</section>
-
-
-
+  </section>
 
   <!-- Footer -->
   <footer class="bg-blue-800 text-white py-4 w-full bottom-0">
@@ -343,9 +305,29 @@
       <p>&copy; <span id="currentYear"></span> ICISML. All Rights Reserved.</p>
     </div>
   </footer>
+
+  <!-- Scripts -->
   <script>
-    document.getElementById('currentYear').textContent = new Date().getFullYear()+1;
+    // footer year
+    document.getElementById('currentYear').textContent = new Date().getFullYear() + 1;
+
+    // mobile menu toggle
+    document.querySelectorAll('[onclick]').forEach(btn => {
+      // leave existing onclick handlers intact (for backward compatibility)
+    });
+    // explicit toggle for #mobile-menu button
+    const mobileToggle = document.querySelector('button[aria-controls="mobile-menu"]');
+    if (mobileToggle) {
+      mobileToggle.addEventListener('click', () => {
+        const menu = document.getElementById('mobile-menu');
+        if (!menu) return;
+        menu.classList.toggle('hidden');
+        const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+        mobileToggle.setAttribute('aria-expanded', String(!expanded));
+      });
+    }
   </script>
+
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
     new Swiper(".mySwiper", {
@@ -367,8 +349,6 @@
         clickable: true,
       },
     });
-
   </script>
-
 </body>
 </html>
