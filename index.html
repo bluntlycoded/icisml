@@ -49,8 +49,36 @@
     /* strike helper for better visibility */
     .strike { text-decoration-thickness: 3px; text-decoration-style: solid; text-decoration-color: rgba(220,38,38,0.9); }
 
-    /* small style adjustments for hero overlay */
-    .hero::before { content: ""; position: absolute; inset: 0; background-color: rgba(0,0,0,0.45); z-index: 1; }
+    /* Hero styles */
+    .hero {
+      position: relative;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.45);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* small style adjustments for gallery images */
+    .gallery-item img { transition: transform 0.3s ease; }
+    .gallery-item img:hover { transform: scale(1.02); }
   </style>
 </head>
 <body class="bg-white">
@@ -123,7 +151,28 @@
     </ul>
   </div>
 
-<!-- <section class="relative hero"> <!-- Dark Overlay --> <div class="absolute inset-0 bg-gray bg-opacity-30"></div> <!-- Hero Content --> <div class="relative z-10 text-center text-white max-w-2xl px-4"> <!-- Logo (optional) --> <img src="https://upload.wikimedia.org/wikipedia/en/8/85/Nagaland_University_Logo.png" alt="NITM Logo" class="mx-auto mb-4 w-24 h-auto" /> <h1 class="text-3xl md:text-5xl font-bold mb-4"> 6th - International Conference on Intelligent Systems and Machine Learning (Hybrid Mode) </h1> <p class="text-xl md:text-2xl mb-2">24-25 February, 2026</p> <p class="text-xl md:text-2xl mb-6">Nagaland University,India</p> <!-- CTA Buttons --> <div class="space-x-4"> <!-- <a href="Conference-Brochure-_3-10-24.pdf"" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md"> Brochure </a> --> <!-- <a href="https://cmt3.research.microsoft.com/ICISML2026/" class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-md"> Submit Your Paper Using CMT </a> --> </div> </div> </section> -->
+  <!-- Hero / CTA Section (centered content) -->
+  <section class="hero" style="background-image: url('./icisml.jpeg');">
+    <div class="hero-content max-w-2xl px-4 text-center">
+      <!-- Logo (optional) -->
+      <img src="https://upload.wikimedia.org/wikipedia/en/8/85/Nagaland_University_Logo.png" alt="NITM Logo" class="mx-auto mb-4 w-24 h-auto" />
+      
+      <h1 class="text-3xl md:text-5xl font-bold mb-4 text-white">
+        6th - International Conference on Intelligent Systems and Machine Learning (Hybrid Mode)
+      </h1>
+      <p class="text-xl md:text-2xl mb-2 text-white">24-25 February, 2026</p>
+      <p class="text-xl md:text-2xl mb-6 text-white">Nagaland University, India</p>
+
+      <!-- CTA Buttons (COMMENTED OUT as requested) -->
+      <!--
+      <div class="space-x-4">
+        <a href="https://cmt3.research.microsoft.com/ICISML2026/" target="_blank" rel="noopener" class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-md">
+          Submit Your Paper Using CMT
+        </a>
+      </div>
+      -->
+    </div>
+  </section>
 
   <!-- Our Partners / Swiper -->
   <section class="py-12 bg-gray-100">
@@ -144,7 +193,7 @@
           </div>
           <div class="swiper-slide flex items-center justify-center">
             <div class="w-[720px] h-[360px] bg-white shadow-lg rounded-lg overflow-hidden">
-              <img src="https://i.ibb.co/Mk2TZt9f/706fa8a3-625c-485a-931e-2d5c330aa724.jpg" alt="ICISML 3" class="w-full h-full object-cover" />
+              <img src="https://i.ibb.co/Mk2TZt9f/706fa8a3-625c-485d-931e-2d5c330aa724.jpg" alt="ICISML 3" class="w-full h-full object-cover" />
             </div>
           </div>
           <div class="swiper-slide flex items-center justify-center">
@@ -185,7 +234,6 @@
             <tr class="border-b border-gray-200">
               <td class="px-4 py-2">Due Date of Paper Submission</td>
               <td class="px-4 py-2">
-                <!-- Red strike-through + Closed badge -->
                 <span class="strike text-red-600 font-semibold line-through">17 November, 2025</span>
                 <span class="ml-2 inline-block bg-red-100 text-red-800 text-xs px-2 py-1 rounded">Closed</span>
               </td>
@@ -244,36 +292,36 @@
     <div class="max-w-7xl mx-auto px-6">
       <h2 class="text-3xl font-extrabold text-blue-900 text-center mb-12">Explore Nagaland</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-          <img src="https://nagalandtribune.in/wp-content/uploads/2023/09/Longkhum-Village-Launches-Tourism-Website-to-Boost-Tourism-and-Connectivity-1.jpg" alt="Longkhum Village" class="w-full h-52 object-cover transition-transform duration-300 hover:scale-105">
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden gallery-item">
+          <img src="https://nagalandtribune.in/wp-content/uploads/2023/09/Longkhum-Village-Launches-Tourism-Website-to-Boost-Tourism-and-Connectivity-1.jpg" alt="Longkhum Village" class="w-full h-52 object-cover">
           <div class="p-4 text-center font-medium text-gray-800">Longkhum Village</div>
         </div>
-        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGvdS5H_CLbqheEwa_tZc7JHnfLYp85mi2LQ&s" alt="Ungma Village" class="w-full h-52 object-cover transition-transform duration-300 hover:scale-105">
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden gallery-item">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGvdS5H_CLbqheEwa_tZc7JHnfLYp85mi2LQ&s" alt="Ungma Village" class="w-full h-52 object-cover">
           <div class="p-4 text-center font-medium text-gray-800">Ungma Village</div>
         </div>
-        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-          <img src="https://s7ap1.scene7.com/is/image/incredibleindia/dzukou-valley-kohima-nagaland-attr-hero-1?qlt=82&ts=1727012411648" alt="Dzukou Valley" class="w-full h-52 object-cover transition-transform duration-300 hover:scale-105">
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden gallery-item">
+          <img src="https://s7ap1.scene7.com/is/image/incredibleindia/dzukou-valley-kohima-nagaland-attr-hero-1?qlt=82&ts=1727012411648" alt="Dzukou Valley" class="w-full h-52 object-cover">
           <div class="p-4 text-center font-medium text-gray-800">Dzukou Valley</div>
         </div>
-        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-          <img src="https://static.toiimg.com/photo/96145044.cms" alt="Mount Saramati" class="w-full h-52 object-cover transition-transform duration-300 hover:scale-105">
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden gallery-item">
+          <img src="https://static.toiimg.com/photo/96145044.cms" alt="Mount Saramati" class="w-full h-52 object-cover">
           <div class="p-4 text-center font-medium text-gray-800">Mount Saramati</div>
         </div>
-        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-          <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQ_R-Vo0kPgcJr8A9Yq_OQW0WOej2Z5UQ7MNpizyiNJnCZW0b_-0yFJA_BXJ7wwWHLJ0amAVR_sO-VwG2dORbc9AcHTflqaBjShFFWd44c" alt="Mokokchung Town" class="w-full h-52 object-cover transition-transform duration-300 hover:scale-105">
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden gallery-item">
+          <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQ_R-Vo0kPgcJr8A9Yq_OQW0WOej2Z5UQ7MNpizyiNJnCZW0b_-0yFJA_BXJ7wwWHLJ0amAVR_sO-VwG2dORbc9AcHTflqaBjShFFWd44c" alt="Mokokchung Town" class="w-full h-52 object-cover">
           <div class="p-4 text-center font-medium text-gray-800">Mokokchung Town</div>
         </div>
-        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-          <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq7mjDhadrJCiuTZ0Err4yHZ6_t26-0WJXRSzVK3w4ivbGJVmczzr-knBA4yUR6u8-f0ZGtrRYRunkxA5TDmAn-AO8ZOF7b1DNrBZ0DQ-U3X60v1T12-lct_fxwHfXUXnv9dMxmvA=w270-h312-n-k-no" alt="Japfu Peak" class="w-full h-52 object-cover transition-transform duration-300 hover:scale-105">
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden gallery-item">
+          <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq7mjDhadrJCiuTZ0Err4yHZ6_t26-0WJXRSzVK3w4ivbGJVmczzr-knBA4yUR6u8-f0ZGtrRYRunkxA5TDmAn-AO8ZOF7b1DNrBZ0DQ-U3X60v1T12-lct_fxwHfXUXnv9dMxmvA=w270-h312-n-k-no" alt="Japfu Peak" class="w-full h-52 object-cover">
           <div class="p-4 text-center font-medium text-gray-800">Japfu Peak</div>
         </div>
-        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-          <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTcFJNaGJ42WXqxLx0FGlBuy5ck3w_7h_InIajBXTVeiRO86khdqMetX0ezkwRSsZuvuyk5qazI3YC02wtDFy1s6p70doPjmEApaotRqg" alt="Khonoma Village" class="w-full h-52 object-cover transition-transform duration-300 hover:scale-105">
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden gallery-item">
+          <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTcFJNaGJ42WXqxLx0FGlBuy5ck3w_7h_InIajBXTVeiRO86khdqMetX0ezkwRSsZuvuyk5qazI3YC02wtDFy1s6p70doPjmEApaotRqg" alt="Khonoma Village" class="w-full h-52 object-cover">
           <div class="p-4 text-center font-medium text-gray-800">Khonoma Village</div>
         </div>
-        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-          <img src="https://cdn.s3waas.gov.in/s317c276c8e723eb46aef576537e9d56d0/uploads/bfi_thumb/2018072781-olw703v7orqatee4lw507s9ixju7z70fwlpkltgpl6.png" alt="Tuophema Tourist Village" class="w-full h-52 object-cover transition-transform duration-300 hover:scale-105">
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden gallery-item">
+          <img src="https://cdn.s3waas.gov.in/s317c276c8e723eb46aef576537e9d56d0/uploads/bfi_thumb/2018072781-olw703v7orqatee4lw507s9ixju7z70fwlpkltgpl6.png" alt="Tuophema Tourist Village" class="w-full h-52 object-cover">
           <div class="p-4 text-center font-medium text-gray-800">Touphema Tourist Village</div>
         </div>
       </div>
@@ -293,10 +341,6 @@
     document.getElementById('currentYear').textContent = new Date().getFullYear() + 1;
 
     // mobile menu toggle
-    document.querySelectorAll('[onclick]').forEach(btn => {
-      // leave existing onclick handlers intact (for backward compatibility)
-    });
-    // explicit toggle for #mobile-menu button
     const mobileToggle = document.querySelector('button[aria-controls="mobile-menu"]');
     if (mobileToggle) {
       mobileToggle.addEventListener('click', () => {
