@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ICISML 2026 - Call for Papers</title>
+  <!-- Tailwind CSS (per your instruction) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root { --ticker-height: 44px; }
+
+    /* Fixed red ticker at top */
+    .ticker {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--ticker-height);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      z-index: 60;
+      background: #991b1b; /* dark red */
+      color: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+      font-weight: 600;
+    }
+    .ticker__track {
+      display: inline-block;
+      white-space: nowrap;
+      will-change: transform;
+      animation: ticker-scroll 16s linear infinite;
+      padding-left: 100%;
+    }
+    @keyframes ticker-scroll {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .ticker__track { animation: none; transform: translateX(0); padding-left: 1rem; }
+    }
+
+    /* push page content below the fixed ticker */
+    body { padding-top: calc(var(--ticker-height) + 0px); }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- TOP TICKER: PAPER SUBMISSION IS CLOSED -->
+  <div class="ticker" role="status" aria-live="polite">
+    <div class="ticker__track" aria-hidden="true">
+     
+All accepted papers will be published in the AIP Conference Proceedings, which is indexed in Scopus-All accepted papers will be published in the AIP Conference Proceedings, which is indexed in Scopus-All accepted papers will be published in the AIP Conference Proceedings, which is indexed in Scopus </div>
+    <div class="sr-only">Paper submission is closed.</div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="bg-blue-800 text-white">
+    <div class="container mx-auto flex justify-between items-center py-4 px-4">
+      <!-- Logo / Title -->
+      <div class="text-xl font-bold">
+        <a href="#">
+          <img src="./icsml.jpg" alt="ICISML Logo" class="h-10">
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:block">
+        <ul class="flex space-x-6">
+          <li><a href="index.html" class="hover:text-gray-300 ">Home</a></li>
+          <li><a href="call-for-papers.html" class="hover:text-gray-300 underline">Call for Papers</a></li>
+          <li><a href="publication.html" class="hover:text-gray-300">Publication</a></li>
+          <li><a href="registration.html" class="hover:text-gray-300">Registration</a></li>
+          <li><a href="authors.html" class="hover:text-gray-300">Authors</a></li>
+          <li><a href="speakers.html" class="hover:text-gray-300">Speakers</a></li>
+          <li><a href="committee.html" class="hover:text-gray-300">Committee</a></li>
+          <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button
+              class="md:hidden focus:outline-none"
+              onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+      >
+        <svg
+                class="w-6 h-6 text-white-800"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 5h16M4 12h16M4 19h16" />
+        </svg>
+        <span class="sr-only">Open mobile menu</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div id="mobile-menu" class="bg-blue-900 text-white hidden">
+    <ul class="p-4 space-y-2">
+      <li><a href="index.html" class="block hover:bg-blue-800 p-2">Home</a></li>
+      <li><a href="call-for-papers.html" class="block hover:bg-blue-800 p-2 underline">Call for Papers</a></li>
+      <li><a href="publication.html" class="block hover:bg-blue-800 p-2">Publication</a></li>
+      <li><a href="registration.html" class="block hover:bg-blue-800 p-2">Registration</a></li>
+      <li><a href="authors.html" class="block hover:bg-blue-800 p-2">Authors</a></li>
+      <li><a href="speakers.html" class="block hover:bg-blue-800 p-2">Speakers</a></li>
+      <li><a href="committee.html" class="block hover:bg-blue-800 p-2">Committee</a></li>
+      <li><a href="contact.html" class="block hover:bg-blue-800 p-2">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero / Heading Section -->
+  <section class="bg-white py-8">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-3xl md:text-5xl font-bold text-blue-900 mb-4">Call for Papers</h1>
+      <p class="text-gray-700 max-w-2xl mx-auto">
+        ICISML 2026 invites submissions of original, high-quality research papers in the following tracks. We look forward to your contributions!
+      </p>
+    </div>
+  </section>
+
+  <!-- Tracks in 2x2 Grid -->
+  <section class="py-8 bg-gray-50">
+    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Track 1 -->
+      <div class="bg-green-100 border-l-4 border-green-400 p-6 rounded-lg shadow">
+        <h2 class="text-xl font-bold text-green-700 mb-2">Track 1: Image Recognition</h2>
+        <p class="text-gray-700">
+          Cooperative intelligent applications, pattern recognition, embedded systems, UAVs, adaptive &amp; autonomous robotics, real-time intelligence, and more.
+        </p>
+      </div>
+      <!-- Track 2 -->
+      <div class="bg-yellow-100 border-l-4 border-yellow-400 p-6 rounded-lg shadow">
+        <h2 class="text-xl font-bold text-yellow-700 mb-2">Track 2: Machine Learning</h2>
+        <p class="text-gray-700">
+          Neural networks, deep learning, hybrid and non-linear systems, large-scale data analytics, learning algorithms, and emerging ML frameworks.
+        </p>
+      </div>
+      <!-- Track 3 -->
+      <div class="bg-pink-100 border-l-4 border-pink-400 p-6 rounded-lg shadow">
+        <h2 class="text-xl font-bold text-pink-700 mb-2">
+          Track 3: Intelligent Systems &amp; ML Applications
+        </h2>
+        <p class="text-gray-700">
+          Smart cities, Internet of Things, healthcare informatics, speech recognition, natural language processing, data mining, and advanced ML applications.
+        </p>
+      </div>
+      <!-- Track 4 -->
+      <div class="bg-blue-100 border-l-4 border-blue-400 p-6 rounded-lg shadow">
+        <h2 class="text-xl font-bold text-blue-700 mb-2">
+          Track 4: Intelligent Communication Networks
+        </h2>
+        <p class="text-gray-700">
+          Cognitive radio, vehicular networks, sensor-based intelligence, 5G &amp; 6G technologies, UAV communication, underwater networks, and cloud-edge integration.
+        </p>
+      </div>
+      <div class="bg-green-100 border-l-4 border-green-400 p-6 rounded-lg shadow">
+        <h2 class="text-xl font-bold text-green-700 mb-2">
+          Track 5: Bioinformatics & Biotechnology
+        </h2>
+        <p class="text-gray-700">
+          Genomics, proteomics, computational biology, biomedical signal analysis, drug discovery, genetic engineering, and AI in biotechnology.
+        </p>
+      </div>
+
+      <div class="bg-yellow-100 border-l-4 border-yellow-400 p-6 rounded-lg shadow mt-4">
+        <h2 class="text-xl font-bold text-yellow-700 mb-2">
+          Track 6: Agricultural Engineering
+        </h2>
+        <p class="text-gray-700">
+          Smart farming, precision agriculture, agri-robotics, IoT in agriculture, remote sensing for crop monitoring, and sustainable agricultural systems.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Submission Guidelines Section -->
+  <section class="py-8 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold text-blue-900 mb-4">Submission Guidelines</h2>
+      <ul class="list-disc list-inside text-gray-700 space-y-2">
+        <li>Papers must be original, not under review elsewhere.</li>
+        <li>Follow the <strong>ICISML 2026 template</strong> for formatting.</li>
+        <li>Submissions must be in English</li>
+        <li>All papers will undergo a rigorous peer-review process.</li>
+        <li>Accepted papers will be published in the conference proceedings.</li>
+      </ul>
+      <div class="mt-4">
+        <!-- Download Template button (still commented out if you want) -->
+        <!--
+        <a href="#" class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-md">
+          Download Template
+        </a>
+        -->
+        <!-- Submit button via CMT: COMMENTED OUT as requested -->
+        <!--
+        <a href="https://cmt3.research.microsoft.com/ICISML2026/" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md ml-2" target="_blank" rel="noopener">
+          Submit Your Paper Using CMT
+        </a>
+        -->
+        <!-- If you prefer a visible disabled/closed button instead, uncomment below and remove the commented CMT link above -->
+        <!--
+        <button disabled class="inline-block bg-gray-400 text-white font-semibold py-2 px-4 rounded-md ml-2 cursor-not-allowed" title="Submission closed">
+          Submission Closed
+        </button>
+        -->
+      </div>
+    </div>
+  </section>
+
+  <section class="py-6 bg-gray-100">
+    <div class="container mx-auto px-4 text-sm text-gray-700 text-center max-w-3xl">
+      <p>
+        The <a href="https://cmt3.research.microsoft.com/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Microsoft CMT</a> service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-800 text-white py-4 w-full  bottom-0">
+    <div class="container mx-auto px-4 text-center">
+      <p>&copy; <span id="currentYear"></span> ICISML. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Set footer year
+    document.getElementById('currentYear').textContent = new Date().getFullYear()+1;
+
+    // Mobile menu toggle (keeps existing inline onclick safe fallback)
+    const mobileToggle = document.querySelector('button[aria-controls="mobile-menu"]');
+    if (mobileToggle) {
+      mobileToggle.addEventListener('click', () => {
+        const menu = document.getElementById('mobile-menu');
+        if (!menu) return;
+        menu.classList.toggle('hidden');
+        const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+        mobileToggle.setAttribute('aria-expanded', String(!expanded));
+      });
+    }
+  </script>
+
+</body>
+</html>

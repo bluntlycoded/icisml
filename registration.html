@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ICISML 2026 - Registration | PSIT Kanpur</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Ticker animation and layout */
+    :root { --ticker-height: 44px; }
+    .ticker {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--ticker-height);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      z-index: 60;
+      background: #991b1b; /* dark red */
+      color: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      font-weight: 600;
+    }
+    .ticker__track {
+      display: inline-block;
+      white-space: nowrap;
+      will-change: transform;
+      animation: ticker-scroll 16s linear infinite;
+      padding-left: 100%;
+    }
+    @keyframes ticker-scroll {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* push page content below the fixed ticker */
+    body { padding-top: calc(var(--ticker-height) + 0px); }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .ticker__track { animation: none; transform: translateX(0); padding-left: 1rem; }
+    }
+
+    /* small helper to make strike visible on mobile too */
+    .strike { text-decoration-thickness: 3px; text-decoration-style: solid; text-decoration-color: rgba(220,38,38,0.9); }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+  <!-- TOP TICKER: paper submission closed -->
+  <div class="ticker" role="status" aria-live="polite">
+    <div class="ticker__track" aria-hidden="true">
+All accepted papers will be published in the AIP Conference Proceedings, which is indexed in Scopus-All accepted papers will be published in the AIP Conference Proceedings, which is indexed in Scopus-All accepted papers will be published in the AIP Conference Proceedings, which is indexed in Scopus
+    </div>
+    <div class="sr-only">Paper submission is closed.</div>
+  </div>
+
+  <!-- Header -->
+  <header class="bg-blue-800 text-white">
+    <div class="container mx-auto flex justify-between items-center py-4 px-4">
+      <!-- Logo / Title -->
+      <div class="flex items-center space-x-3">
+        <a href="#" class="flex items-center">
+          <img src="./icsml.jpg" alt="ICISML Logo" class="h-10 w-auto object-contain">
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:block">
+        <ul class="flex space-x-6">
+          <li><a href="index.html" class="hover:text-gray-300">Home</a></li>
+          <li><a href="call-for-papers.html" class="hover:text-gray-300">Call for Papers</a></li>
+          <li><a href="publication.html" class="hover:text-gray-300">Publication</a></li>
+          <li><a href="registration.html" class="hover:text-gray-300 underline">Registration</a></li>
+          <li><a href="authors.html" class="hover:text-gray-300">Authors</a></li>
+          <li><a href="speakers.html" class="hover:text-gray-300">Speakers</a></li>
+          <li><a href="committee.html" class="hover:text-gray-300">Committee</a></li>
+          <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button
+          id="mobileMenuButton"
+          class="focus:outline-none p-2 rounded"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+               xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 5h16M4 12h16M4 19h16"></path>
+          </svg>
+          <span class="sr-only">Open mobile menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div id="mobile-menu" class="bg-blue-900 text-white hidden md:hidden">
+    <ul class="p-4 space-y-2">
+      <li><a href="index.html" class="block hover:bg-blue-800 p-2 rounded">Home</a></li>
+      <li><a href="call-for-papers.html" class="block hover:bg-blue-800 p-2 rounded">Call for Papers</a></li>
+      <li><a href="publication.html" class="block hover:bg-blue-800 p-2 rounded">Publication</a></li>
+      <li><a href="registration.html" class="block hover:bg-blue-800 p-2 rounded underline">Registration</a></li>
+      <li><a href="authors.html" class="block hover:bg-blue-800 p-2 rounded">Authors</a></li>
+      <li><a href="speakers.html" class="block hover:bg-blue-800 p-2 rounded">Speakers</a></li>
+      <li><a href="committee.html" class="block hover:bg-blue-800 p-2 rounded">Committee</a></li>
+      <li><a href="contact.html" class="block hover:bg-blue-800 p-2 rounded">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Registration Information Section -->
+  <section class="bg-white py-10 shadow-sm">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Registration and Session</h1>
+      <p class="text-gray-700 max-w-2xl mx-auto">
+        Secure your spot at ICISML 2026 by registering according to your preferred category. The table below outlines the registration fees for conference proceedings and journal publication.
+      </p>
+    </div>
+  </section>
+
+ <section class="py-8 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-6 text-blue-900">Important Dates</h2>
+      <div class="overflow-x-auto">
+        <table class="table-auto w-full text-left bg-white shadow-lg rounded-lg">
+          <thead>
+            <tr class="bg-blue-50 border-b border-gray-200">
+              <th class="px-4 py-2 font-semibold text-gray-700">Event</th>
+              <th class="px-4 py-2 font-semibold text-gray-700">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-200">
+              <td class="px-4 py-2">Due Date of Paper Submission</td>
+              <td class="px-4 py-2">20 December, 2025
+              </td>
+            </tr>
+            <tr class="border-b border-gray-200 bg-gray-50">
+              <td class="px-4 py-2">Notification</td>
+              <td class="px-4 py-2">3 January, 2026</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="px-4 py-2">Last Date of Registration</td>
+              <td class="px-4 py-2">10 January, 2026</td>
+            </tr>
+            <tr class="border-b bg-gray-200">
+              <td class="px-4 py-2">Camera Ready Paper Submission</td>
+              <td class="px-4 py-2">15 January, 2026</td>
+            </tr>
+            <tr class="border-b border-gray-200 bg-gray-50">
+              <td class="px-4 py-2">Pre Conference Tutorial</td>
+              <td class="px-4 py-2">23 February, 2026</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2">Conference Date</td>
+              <td class="px-4 py-2">24-25 February, 2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Fee Table -->
+  <main class="py-10 flex-grow">
+    <div class="container mx-auto px-4">
+      <div class="overflow-x-auto bg-white shadow rounded-lg p-6">
+        <h2 class="text-2xl font-bold mb-6 text-blue-900">Fee Details</h2>
+        <table class="table-auto w-full text-left">
+          <thead>
+            <tr class="bg-blue-50 border-b border-gray-200">
+              <th class="px-4 py-2 font-semibold text-gray-700">Registration Types</th>
+              <th class="px-4 py-2 font-semibold text-gray-700">Registration Fees</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- <tr class="border-b border-gray-200">
+              <td class="px-4 py-3">Edited Book Chapter(Scopus Indexed)</td>
+              <td class="px-4 py-3">
+                6,000 INR (Indian Author) <br />
+                USD $100 (Others)
+              </td>
+            </tr> -->
+            <!-- NEW ROW: AIP Publication -->
+            <tr class="border-b border-gray-200 bg-gray-50">
+              <td class="px-4 py-3">AIP Conference Proceeding(Scopus Indexed)</td>
+              <td class="px-4 py-3">
+                9,000 INR (Indian Author) <br/>
+                USD $200 (Others)
+              </td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="px-4 py-3">Journal Publication(Scopus Indexed)</td>
+              <td class="px-4 py-3">
+                24,000 INR (Indian Author) <br/>
+                USD $650  (Others)
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Optional: Registration Instructions -->
+      <div class="mt-6 bg-white p-6 rounded-lg shadow">
+        <h3 class="text-lg font-semibold mb-2">Registration instructions</h3>
+        <ol class="list-decimal list-inside text-gray-700">
+          <li>Ensure you choose the correct category (Indian author / Other).</li>
+          <li>Payment details and invoice options will be available on the registration page.</li>
+          <li>If your paper was previously submitted, note that submission is closed — contact the program chairs for any queries.</li>
+        </ol>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-800 text-white py-6 w-full">
+    <div class="container mx-auto px-4 text-center">
+      <p>&copy; <span id="currentYear"></span> ICISML. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Current year in footer (keeps behaviour from earlier)
+    (function () {
+      var el = document.getElementById('currentYear');
+      if (el) el.textContent = new Date().getFullYear() + 1;
+    })();
+
+    // Mobile menu toggle
+    (function () {
+      var btn = document.getElementById('mobileMenuButton');
+      var menu = document.getElementById('mobile-menu');
+      if (!btn || !menu) return;
+      btn.addEventListener('click', function () {
+        var isHidden = menu.classList.contains('hidden');
+        if (isHidden) {
+          menu.classList.remove('hidden');
+          btn.setAttribute('aria-expanded', 'true');
+        } else {
+          menu.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
