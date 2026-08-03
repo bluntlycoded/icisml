@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ICISML 2026 - Registration</title>
+  <title>ICISML 2027 - Registration | PSIT Kanpur</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
   <style>
     /* Ticker animation and layout */
-    :root { --ticker-height: 44px; }
+    /* Ticker is currently hidden (markup commented out below).
+       Set --ticker-height back to 44px when the ticker is re-enabled. */
+    :root { --ticker-height: 0px; }
     .ticker {
       position: fixed;
       top: 0;
@@ -65,7 +68,7 @@ All accepted papers will be published in the AIP Conference Proceedings, which i
       <!-- Logo / Title -->
       <div class="flex items-center space-x-3">
         <a href="#" class="flex items-center">
-          <img src="./icsml.jpg" alt="ICISML Logo" class="h-10 w-auto object-contain">
+          <img src="./assets/img/icsml.jpg" alt="ICISML Logo" class="h-10 w-auto object-contain">
         </a>
       </div>
 
@@ -120,53 +123,52 @@ All accepted papers will be published in the AIP Conference Proceedings, which i
     <div class="container mx-auto px-4 text-center">
       <h1 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Registration and Session</h1>
       <p class="text-gray-700 max-w-2xl mx-auto">
-        Secure your spot at ICISML 2026 by registering according to your preferred category. The table below outlines the registration fees for conference proceedings and journal publication.
+        Secure your spot at ICISML 2027 by registering according to your preferred category. The table below outlines the registration fees for conference proceedings and journal publication.
       </p>
     </div>
   </section>
 
- <section class="py-8 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-2xl font-bold mb-6 text-blue-900">Important Dates</h2>
-      <div class="overflow-x-auto">
-        <table class="table-auto w-full text-left bg-white shadow-lg rounded-lg">
-          <thead>
-            <tr class="bg-blue-50 border-b border-gray-200">
-              <th class="px-4 py-2 font-semibold text-gray-700">Event</th>
-              <th class="px-4 py-2 font-semibold text-gray-700">Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-b border-gray-200">
-              <td class="px-4 py-2">Due Date of Paper Submission</td>
-              <td class="px-4 py-2">20 December, 2025
-              </td>
-            </tr>
-            <tr class="border-b border-gray-200 bg-gray-50">
-              <td class="px-4 py-2">Notification</td>
-              <td class="px-4 py-2">3 January, 2026</td>
-            </tr>
-            <tr class="border-b border-gray-200">
-              <td class="px-4 py-2">Last Date of Registration</td>
-              <td class="px-4 py-2">10 January, 2026</td>
-            </tr>
-            <tr class="border-b bg-gray-200">
-              <td class="px-4 py-2">Camera Ready Paper Submission</td>
-              <td class="px-4 py-2">15 January, 2026</td>
-            </tr>
-            <tr class="border-b border-gray-200 bg-gray-50">
-              <td class="px-4 py-2">Pre Conference Tutorial</td>
-              <td class="px-4 py-2">23 February, 2026</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-2">Conference Date</td>
-              <td class="px-4 py-2">24-25 February, 2026</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+<section class="py-8 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-6 text-blue-900">Important Dates</h2>
+    <div class="overflow-x-auto">
+      <table class="table-auto w-full text-left bg-white shadow-lg rounded-lg">
+        <thead>
+          <tr class="bg-blue-50 border-b border-gray-200">
+            <th class="px-4 py-2 font-semibold text-gray-700">Event</th>
+            <th class="px-4 py-2 font-semibold text-gray-700">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-gray-200">
+            <td class="px-4 py-2">Due Date of Paper Submission</td>
+            <td class="px-4 py-2">20 December, 2026</td>
+          </tr>
+          <tr class="border-b border-gray-200 bg-gray-50">
+            <td class="px-4 py-2">Notification</td>
+            <td class="px-4 py-2">3 February, 2027</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="px-4 py-2">Last Date of Registration</td>
+            <td class="px-4 py-2">10 February, 2027</td>
+          </tr>
+          <tr class="border-b bg-gray-200">
+            <td class="px-4 py-2">Camera Ready Paper Submission</td>
+            <td class="px-4 py-2">15 February, 2027</td>
+          </tr>
+          <tr class="border-b border-gray-200 bg-gray-50">
+            <td class="px-4 py-2">Pre Conference Tutorial</td>
+            <td class="px-4 py-2">11 March, 2027</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">Conference Date</td>
+            <td class="px-4 py-2">12-13 March, 2027</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Registration Fee Table -->
   <main class="py-10 flex-grow">
@@ -217,6 +219,36 @@ All accepted papers will be published in the AIP Conference Proceedings, which i
         </ol>
       </div>
 
+
+      <!-- Submissions & Acceptance Trend -->
+      <div class="mt-8 bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-1 text-blue-900">Submissions &amp; Acceptance Trend</h2>
+        <p class="text-gray-600 text-sm mb-6">ICISML 2021&ndash;2026</p>
+        <div class="relative w-full" style="height: 420px;">
+          <canvas id="submissionsChart"></canvas>
+        </div>
+        <div class="overflow-x-auto mt-8">
+          <table class="table-auto w-full text-left">
+            <thead>
+              <tr class="bg-blue-50 border-b border-gray-200">
+                <th class="px-4 py-2 font-semibold text-gray-700">Year</th>
+                <th class="px-4 py-2 font-semibold text-gray-700">Total Paper Submissions</th>
+                <th class="px-4 py-2 font-semibold text-gray-700">Acceptance</th>
+                <th class="px-4 py-2 font-semibold text-gray-700">Acceptance Rate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-gray-200"><td class="px-4 py-2">2021</td><td class="px-4 py-2">430</td><td class="px-4 py-2">54</td><td class="px-4 py-2">12.6%</td></tr>
+              <tr class="border-b border-gray-200 bg-gray-50"><td class="px-4 py-2">2022</td><td class="px-4 py-2">590</td><td class="px-4 py-2">76</td><td class="px-4 py-2">12.9%</td></tr>
+              <tr class="border-b border-gray-200"><td class="px-4 py-2">2023</td><td class="px-4 py-2">640</td><td class="px-4 py-2">87</td><td class="px-4 py-2">13.6%</td></tr>
+              <tr class="border-b border-gray-200 bg-gray-50"><td class="px-4 py-2">2024</td><td class="px-4 py-2">720</td><td class="px-4 py-2">108</td><td class="px-4 py-2">15.0%</td></tr>
+              <tr class="border-b border-gray-200"><td class="px-4 py-2">2025</td><td class="px-4 py-2">745</td><td class="px-4 py-2">112</td><td class="px-4 py-2">15.0%</td></tr>
+              <tr class="bg-gray-50"><td class="px-4 py-2">2026</td><td class="px-4 py-2">823</td><td class="px-4 py-2">249</td><td class="px-4 py-2">30.3%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
     </div>
   </main>
 
@@ -248,6 +280,70 @@ All accepted papers will be published in the AIP Conference Proceedings, which i
         } else {
           menu.classList.add('hidden');
           btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+
+
+  <!-- Submissions & acceptance chart -->
+  <script>
+    (function () {
+      var el = document.getElementById('submissionsChart');
+      if (!el || typeof Chart === 'undefined') return;
+
+      var labels = ['ICISML 2021','ICISML 2022','ICISML 2023','ICISML 2024','ICISML 2025','ICISML 2026'];
+      var submissions = [430, 590, 640, 720, 745, 823];
+      var accepted    = [54, 76, 87, 108, 112, 249];
+      var rate        = accepted.map(function (a, i) {
+        return Math.round((a / submissions[i]) * 1000) / 10;
+      });
+
+      new Chart(el, {
+        data: {
+          labels: labels,
+          datasets: [
+            { type: 'bar', label: 'Submissions', data: submissions,
+              backgroundColor: '#E0A422', borderColor: '#E0A422', yAxisID: 'y', order: 2 },
+            { type: 'bar', label: 'Accepted Papers', data: accepted,
+              backgroundColor: '#0F9B8E', borderColor: '#0F9B8E', yAxisID: 'y', order: 2 },
+            { type: 'line', label: 'Acceptance Rate (%)', data: rate,
+              borderColor: '#1E90FF', backgroundColor: '#1E90FF', borderWidth: 3,
+              pointRadius: 5, pointHoverRadius: 7, tension: 0.3, fill: false,
+              yAxisID: 'y1', order: 1 }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: { position: 'bottom', labels: { usePointStyle: true, boxWidth: 14, padding: 18 } },
+            tooltip: {
+              callbacks: {
+                label: function (ctx) {
+                  var v = ctx.parsed.y;
+                  return ctx.dataset.label + ': ' + (ctx.dataset.yAxisID === 'y1' ? v + '%' : v);
+                }
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: { display: true, text: 'Number of Papers' },
+              grid: { color: 'rgba(0,0,0,0.06)' }
+            },
+            y1: {
+              beginAtZero: true,
+              position: 'right',
+              suggestedMax: 50,
+              title: { display: true, text: 'Acceptance Rate (%)' },
+              grid: { drawOnChartArea: false },
+              ticks: { callback: function (v) { return v + '%'; } }
+            },
+            x: { grid: { display: false } }
+          }
         }
       });
     })();

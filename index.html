@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ICISML 2026 - Home</title>
+  <title>ICISML 2027 - Home | PSIT Kanpur</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
   />
   <style>
-    :root { --ticker-height: 44px; }
+    /* Ticker is currently hidden (markup commented out below).
+       Set --ticker-height back to 44px when the ticker is re-enabled. */
+    :root { --ticker-height: 0px; }
 
     /* Ticker */
     .ticker {
@@ -32,7 +34,7 @@
       display: inline-block;
       white-space: nowrap;
       will-change: transform;
-      animation: ticker-scroll 16s linear infinite;
+      animation: ticker-scroll 25s linear infinite;
       padding-left: 100%;
     }
     @keyframes ticker-scroll {
@@ -83,8 +85,8 @@
 </head>
 <body class="bg-white">
 
-  <!-- <!-- TOP TICKER: PAPER SUBMISSION IS CLOSED 
-  <div class="ticker" role="status" aria-live="polite">
+  <!-- TOP TICKER: PAPER SUBMISSION IS CLOSED -->
+  <!-- <div class="ticker" role="status" aria-live="polite">
     <div class="ticker__track" aria-hidden="true">
      All accepted papers will be published in the AIP Conference Proceedings, which is indexed in Scopus- All accepted papers will be published in the AIP Conference Proceedings, which is indexed in Scopus- All accepted papers will be published in the AIP Conference Proceedings, which is indexed in Scopus
     </div>
@@ -97,7 +99,7 @@
       <!-- Logo / Title -->
       <div class="text-xl font-bold">
         <a href="#">
-          <img src="./icsml.jpg" alt="ICISML Logo" class="h-10">
+          <img src="./assets/img/icsml.jpg" alt="ICISML Logo" class="h-10">
         </a>
       </div>
 
@@ -152,16 +154,16 @@
   </div>
 
   <!-- Hero / CTA Section (centered content) -->
-  <section class="hero" style="background-image: url('./icisml.jpeg');">
+  <section class="hero" style="background-image: url('./assets/img/IMGL2890.jpg');">
     <div class="hero-content max-w-2xl px-4 text-center">
       <!-- Logo (optional) -->
-      <img src="https://upload.wikimedia.org/wikipedia/en/8/85/Nagaland_University_Logo.png" alt="NITM Logo" class="mx-auto mb-4 w-24 h-auto" />
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB-_QidvHAPCl36XvcukVCw_eiBViPlNhmIQ&s" alt="NITM Logo" class="mx-auto mb-4 w-24 h-auto" />
       
       <h1 class="text-3xl md:text-5xl font-bold mb-4 text-white">
-        6th - International Conference on Intelligent Systems and Machine Learning (Hybrid Mode)
+        7th - International Conference on Intelligent Systems and Machine Learning (Hybrid Mode)
       </h1>
-      <p class="text-xl md:text-2xl mb-2 text-white">24-25 February, 2026</p>
-      <p class="text-xl md:text-2xl mb-6 text-white">Nagaland University, India</p>
+      <p class="text-xl md:text-2xl mb-2 text-white">12-13 March, 2027</p>
+      <p class="text-xl md:text-2xl mb-6 text-white">Pranveer Singh Institute of Technology (PSIT), Kanpur, India</p>
 
       <!-- CTA Buttons (COMMENTED OUT as requested) -->
       <!--
@@ -175,7 +177,18 @@
   </section>
 
 
-<!-- Sponsors Section -->
+  <!-- About the Conference -->
+  <section class="py-12 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-6 text-blue-900 text-center">About the Conference</h2>
+      <p class="text-gray-700 max-w-4xl mx-auto text-justify leading-relaxed">
+        <strong>International Conference on Intelligent Systems and Machine Learning (Hybrid Mode)</strong> is a premier international forum that brings together researchers, academicians, industry experts, practitioners, and students to share the latest advancements in Artificial Intelligence (AI), Intelligent Systems, Machine Learning, Deep Learning, Data Science, and emerging computing technologies. The conference promotes interdisciplinary research, innovation, and collaboration between academia and industry to address real-world challenges. Conducted in <strong>Hybrid Mode</strong>, it enables global participation through both physical and virtual presentations. The event features keynote lectures, technical paper presentations, tutorials, workshops, panel discussions, and networking opportunities. It provides an excellent platform for exchanging ideas, fostering collaborations, and showcasing cutting-edge research that drives innovation in intelligent computing and machine learning.
+      </p>
+    </div>
+  </section>
+
+<!-- SPONSORSHIP SECTION (COMMENTED OUT FOR FUTURE USE) -->
+<!--
 <section class="py-12 bg-white">
   <div class="container mx-auto px-4">
     <h2 class="text-3xl font-bold mb-10 text-blue-900 text-center">
@@ -184,20 +197,21 @@
     <div class="flex flex-wrap justify-center items-center gap-12">
       
       <a href="https://anrfonline.in/" target="_blank" rel="noopener">
-        <img src="./anrf.jpeg" alt="ANRF Sponsor Logo" class="h-28 md:h-32 object-contain">
+        <img src="./assets/img/anrf.jpeg" alt="ANRF Sponsor Logo" class="h-28 md:h-32 object-contain">
       </a>
 
       <a href="https://www.skylark-infobase.com/" target="_blank" rel="noopener">
-        <img src="./skylark.jpg" alt="Skylark Sponsor Logo" class="h-28 md:h-32 object-contain">
+        <img src="./assets/img/skylark.jpg" alt="Skylark Sponsor Logo" class="h-28 md:h-32 object-contain">
       </a>
 
       <a href="https://www.okcl.org/" target="_blank" rel="noopener">
-        <img src="./okcl.png" alt="OKCL Sponsor Logo" class="h-28 md:h-32 object-contain">
+        <img src="./assets/img/okcl.png" alt="OKCL Sponsor Logo" class="h-28 md:h-32 object-contain">
       </a>
 
     </div>
   </div>
 </section>
+-->
 
   
 
@@ -209,6 +223,11 @@
 
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
+          <div class="swiper-slide flex items-center justify-center">
+            <div class="w-[720px] h-[360px] bg-white shadow-lg rounded-lg overflow-hidden">
+              <img src="assets/img/2026-conf.jpg" alt="ICISML " class="w-full h-full object-cover" />
+            </div>
+          </div>
           <div class="swiper-slide flex items-center justify-center">
             <div class="w-[720px] h-[360px] bg-white shadow-lg rounded-lg overflow-hidden">
               <img src="https://i.ibb.co/gLrwHGdV/cf007443-0548-4db0-bb4e-6a716945685f.jpg" alt="ICISML 1" class="w-full h-full object-cover" />
@@ -246,7 +265,8 @@
     </div>
   </section>
 
-  <!-- Our Session Chairs Section -->
+  <!-- OUR SESSION CHAIRS SECTION (COMMENTED OUT FOR FUTURE USE) -->
+<!--
 <section class="py-16 bg-gradient-to-r from-purple-600 to-pink-500">
   <div class="container mx-auto px-4 text-center">
     
@@ -257,9 +277,8 @@
     <div class="flex justify-center">
       <div class="bg-white rounded-2xl shadow-2xl overflow-hidden max-w-6xl w-full">
         
-        <!-- Replace the src below with your image path -->
         <img 
-          src="./session-chairs.jpeg" 
+          src="./assets/img/session-chairs.jpeg" 
           alt="ICISML 2026 Session Chairs" 
           class="w-full h-auto object-contain"
         />
@@ -269,52 +288,53 @@
 
   </div>
 </section>
+-->
 
   <!-- Important Dates Section -->
-  <section class="py-8 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-2xl font-bold mb-6 text-blue-900">Important Dates</h2>
-      <div class="overflow-x-auto">
-        <table class="table-auto w-full text-left bg-white shadow-lg rounded-lg">
-          <thead>
-            <tr class="bg-blue-50 border-b border-gray-200">
-              <th class="px-4 py-2 font-semibold text-gray-700">Event</th>
-              <th class="px-4 py-2 font-semibold text-gray-700">Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-b border-gray-200">
-              <td class="px-4 py-2">Due Date of Paper Submission</td>
-              <td class="px-4 py-2">20 December, 2025
-              </td>
-            </tr>
-            <tr class="border-b border-gray-200 bg-gray-50">
-              <td class="px-4 py-2">Notification</td>
-              <td class="px-4 py-2">3 January, 2026</td>
-            </tr>
-            <tr class="border-b border-gray-200">
-              <td class="px-4 py-2">Last Date of Registration</td>
-              <td class="px-4 py-2">10 January, 2026</td>
-            </tr>
-            <tr class="border-b bg-gray-200">
-              <td class="px-4 py-2">Camera Ready Paper Submission</td>
-              <td class="px-4 py-2">15 January, 2026</td>
-            </tr>
-            <tr class="border-b border-gray-200 bg-gray-50">
-              <td class="px-4 py-2">Pre Conference Tutorial</td>
-              <td class="px-4 py-2">23 February, 2026</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-2">Conference Date</td>
-              <td class="px-4 py-2">24-25 February, 2026</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+<section class="py-8 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-6 text-blue-900">Important Dates</h2>
+    <div class="overflow-x-auto">
+      <table class="table-auto w-full text-left bg-white shadow-lg rounded-lg">
+        <thead>
+          <tr class="bg-blue-50 border-b border-gray-200">
+            <th class="px-4 py-2 font-semibold text-gray-700">Event</th>
+            <th class="px-4 py-2 font-semibold text-gray-700">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-gray-200">
+            <td class="px-4 py-2">Due Date of Paper Submission</td>
+            <td class="px-4 py-2">20 December, 2026</td>
+          </tr>
+          <tr class="border-b border-gray-200 bg-gray-50">
+            <td class="px-4 py-2">Notification</td>
+            <td class="px-4 py-2">3 February, 2027</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="px-4 py-2">Last Date of Registration</td>
+            <td class="px-4 py-2">10 February, 2027</td>
+          </tr>
+          <tr class="border-b bg-gray-200">
+            <td class="px-4 py-2">Camera Ready Paper Submission</td>
+            <td class="px-4 py-2">15 February, 2027</td>
+          </tr>
+          <tr class="border-b border-gray-200 bg-gray-50">
+            <td class="px-4 py-2">Pre Conference Tutorial</td>
+            <td class="px-4 py-2">11 March, 2027</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">Conference Date</td>
+            <td class="px-4 py-2">12-13 March, 2027</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-  </section>
+  </div>
+</section>
 
-    <!-- Final Technical Programme Schedule Section -->
+    <!-- FINAL TECHNICAL PROGRAMME SCHEDULE SECTION (COMMENTED OUT FOR FUTURE USE) -->
+  <!--
   <section class="py-12 bg-gray-100">
     <div class="container mx-auto px-4">
       
@@ -327,10 +347,9 @@
         (24–25 February 2026) is available below.
       </p>
 
-      <!-- PDF Viewer -->
       <div class="w-full h-[800px] shadow-lg rounded-lg overflow-hidden border">
         <iframe 
-          src="./Final_Technical Program Details_20_Feb_R1.pdf" 
+          src="./assets/docs/final-technical-program-2026.pdf" 
           width="100%" 
           height="100%" 
           class="w-full h-full"
@@ -338,9 +357,8 @@
         </iframe>
       </div>
 
-      <!-- Download Button -->
       <div class="text-center mt-6">
-        <a href="./Final_Technical Program Details_20_Feb_R1.pdf" 
+        <a href="./assets/docs/final-technical-program-2026.pdf" 
            download
            class="inline-block bg-blue-800 hover:bg-blue-900 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition">
           Download Full Schedule (PDF)
@@ -349,17 +367,52 @@
 
     </div>
   </section>
-  <!-- About Nagaland University -->
+  -->
+  <!-- About PSIT Kanpur -->
   <section class="py-8 bg-gray-50">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-      <div class="md:w-1/2 mb-4 md:mb-0">
-        <img src="https://images.shiksha.com/mediadata/images/1492062779php2RTzjc.png" alt=" University of Nagaland" class="rounded-lg shadow-lg w-full">
+    <div class="container mx-auto px-4">
+      <!-- SCROLLING IMAGE CAROUSEL - Placeholder for carousel images -->
+      <div class="mb-8 bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="w-full h-64 bg-gray-300 flex items-center justify-center">
+          <img src="assets/img/psit-carousel-1.jpg" alt= "PSIT Kanpur Campus" class="w-full h-full object-cover">
+        </div>
       </div>
-      <div class="md:w-1/2 md:pl-8">
-        <h2 class="text-2xl font-bold mb-4 text-blue-900">About Nagaland University</h2>
-        <p class="mb-4 text-gray-700 text-justify">
-          Nagaland University, the 13th Central University and the only Central University in Nagaland was established based on the Act of Parliament of India and received the assent of the President of India on 20th October 1989 as THE NAGALAND UNIVERSITY ACT 1989 (No. 35 of 1989) and came into force as notified in THE GAZETTE OF INDIA EXTRAORDINARY PART-II SECTION-1 in October 1989 published by the Ministry of Law and Justice (Legislative Department), New Delhi.
-        </p>
+
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-4 md:mb-0">
+          <div class="swiper campusSwiper rounded-lg shadow-lg overflow-hidden">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="assets/img/DJI_0669.jpg" alt="PSIT Kanpur campus aerial view" class="w-full h-64 md:h-80 object-cover">
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/img/IMGL2942.jpg" alt="PSIT Kanpur campus auditorium view" class="w-full h-64 md:h-80 object-cover">
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/img/DJI_0796-a.jpg" alt="PSIT Kanpur campus view 2" class="w-full h-64 md:h-80 object-cover">
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/img/IMGL3011.jpg" alt="PSIT Kanpur campus auditorium view 2" class="w-full h-64 md:h-80 object-cover">
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/img/DJI_0796-b.jpg" alt="PSIT Kanpur campus view 3" class="w-full h-64 md:h-80 object-cover">
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/img/DJI_0868.jpg" alt="PSIT Kanpur campus view 4" class="w-full h-64 md:h-80 object-cover">
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/img/IMGL0781.jpg" alt="PSIT Kanpur campus view 5" class="w-full h-64 md:h-80 object-cover">
+              </div>
+            </div>
+            <div class="campus-swiper-pagination py-3"></div>
+          </div>
+        </div>
+        <div class="md:w-1/2 md:pl-8">
+          <h2 class="text-2xl font-bold mb-4 text-blue-900">About Pranveer Singh Institute of Technology (PSIT)</h2>
+          <p class="mb-4 text-gray-700 text-justify">
+            Pranveer Singh Institute of Technology (PSIT), Kanpur, established in 2004, is a premier institution known for academic excellence and innovation. With NAAC A+ and NBA accreditations, PSIT offers programs in Engineering, Business Management, and Computer Applications, blending rigorous academics with hands-on learning. The 140-acre campus is equipped with sustainable infrastructure including solar power, advanced labs, digital libraries, and eco-friendly systems. A distinguished faculty of 192 PhD scholars drives impactful research, patents, and government projects. PSIT fosters entrepreneurship through incubation programs and has nurtured 50+ startups. With 100% placement records, 300+ annual recruitment drives, and alumni across the globe, PSIT stands as a hub of intellectual empowerment and ethical leadership.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -372,44 +425,30 @@
     </div>
   </section>
 
-  <!-- Gallery Section -->
+  <!-- Gallery Section - Explore Kanpur -->
   <section class="gallery-section py-16 bg-white-100">
     <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-3xl font-extrabold text-blue-900 text-center mb-12">Explore Nagaland</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <h2 class="text-3xl font-extrabold text-blue-900 text-center mb-12">Explore Kanpur</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- JK Temple Kanpur -->
         <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden gallery-item">
-          <img src="https://nagalandtribune.in/wp-content/uploads/2023/09/Longkhum-Village-Launches-Tourism-Website-to-Boost-Tourism-and-Connectivity-1.jpg" alt="Longkhum Village" class="w-full h-52 object-cover">
-          <div class="p-4 text-center font-medium text-gray-800">Longkhum Village</div>
+          <img src="assets/img/kanpur-jk-temple.jpg" alt="JK Temple, Kanpur" class="w-full h-52 object-cover">
+          <div class="p-4 text-center font-medium text-gray-800">JK Temple</div>
         </div>
+        
+        <!-- Allen Forest Zoo -->
         <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden gallery-item">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGvdS5H_CLbqheEwa_tZc7JHnfLYp85mi2LQ&s" alt="Ungma Village" class="w-full h-52 object-cover">
-          <div class="p-4 text-center font-medium text-gray-800">Ungma Village</div>
+          <img src="assets/img/kanpur-allen-zoo.jpg" alt="Allen Forest Zoo, Kanpur" class="w-full h-52 object-cover">
+          <div class="p-4 text-center font-medium text-gray-800">Allen Forest Zoo</div>
         </div>
+        
+        <!-- Kanpur Memorial Church -->
         <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden gallery-item">
-          <img src="https://s7ap1.scene7.com/is/image/incredibleindia/dzukou-valley-kohima-nagaland-attr-hero-1?qlt=82&ts=1727012411648" alt="Dzukou Valley" class="w-full h-52 object-cover">
-          <div class="p-4 text-center font-medium text-gray-800">Dzukou Valley</div>
-        </div>
-        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden gallery-item">
-          <img src="https://static.toiimg.com/photo/96145044.cms" alt="Mount Saramati" class="w-full h-52 object-cover">
-          <div class="p-4 text-center font-medium text-gray-800">Mount Saramati</div>
-        </div>
-        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden gallery-item">
-          <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQ_R-Vo0kPgcJr8A9Yq_OQW0WOej2Z5UQ7MNpizyiNJnCZW0b_-0yFJA_BXJ7wwWHLJ0amAVR_sO-VwG2dORbc9AcHTflqaBjShFFWd44c" alt="Mokokchung Town" class="w-full h-52 object-cover">
-          <div class="p-4 text-center font-medium text-gray-800">Mokokchung Town</div>
-        </div>
-        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden gallery-item">
-          <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq7mjDhadrJCiuTZ0Err4yHZ6_t26-0WJXRSzVK3w4ivbGJVmczzr-knBA4yUR6u8-f0ZGtrRYRunkxA5TDmAn-AO8ZOF7b1DNrBZ0DQ-U3X60v1T12-lct_fxwHfXUXnv9dMxmvA=w270-h312-n-k-no" alt="Japfu Peak" class="w-full h-52 object-cover">
-          <div class="p-4 text-center font-medium text-gray-800">Japfu Peak</div>
-        </div>
-        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden gallery-item">
-          <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTcFJNaGJ42WXqxLx0FGlBuy5ck3w_7h_InIajBXTVeiRO86khdqMetX0ezkwRSsZuvuyk5qazI3YC02wtDFy1s6p70doPjmEApaotRqg" alt="Khonoma Village" class="w-full h-52 object-cover">
-          <div class="p-4 text-center font-medium text-gray-800">Khonoma Village</div>
-        </div>
-        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden gallery-item">
-          <img src="https://cdn.s3waas.gov.in/s317c276c8e723eb46aef576537e9d56d0/uploads/bfi_thumb/2018072781-olw703v7orqatee4lw507s9ixju7z70fwlpkltgpl6.png" alt="Tuophema Tourist Village" class="w-full h-52 object-cover">
-          <div class="p-4 text-center font-medium text-gray-800">Touphema Tourist Village</div>
+          <img src="assets/img/kanpur-memorial-church.jpg" alt="Kanpur Memorial Church" class="w-full h-52 object-cover">
+          <div class="p-4 text-center font-medium text-gray-800">Kanpur Memorial Church</div>
         </div>
       </div>
+      
     </div>
   </section>
 
@@ -456,6 +495,34 @@
       },
       pagination: {
         el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+
+    new Swiper(".campusSwiper", {
+      slidesPerView: 1,
+      spaceBetween: 16,
+      loop: true,
+      autoplay: {
+        delay: 2200,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".campus-swiper-pagination",
+        clickable: true,
+      },
+    });
+
+    new Swiper(".topCampusSwiper", {
+      slidesPerView: 1,
+      spaceBetween: 16,
+      loop: true,
+      autoplay: {
+        delay: 2400,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".top-campus-swiper-pagination",
         clickable: true,
       },
     });
