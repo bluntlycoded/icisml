@@ -51,7 +51,6 @@ When the ticker is switched back on, set that variable back to `44px`.
 
 ## Updating the submissions chart
 
-`registration.html` holds the submission/acceptance figures twice — once in the
-Chart.js `submissions`/`accepted` arrays near the bottom of the file, and once in
-the table below the chart. Update both. Acceptance rates are computed from the
-data, not hard-coded in the chart.
+The submission/acceptance figures live in one place: the Chart.js
+`labels`/`submissions`/`accepted` arrays near the bottom of `registration.html`.
+Acceptance rates are computed from those arrays, not hard-coded.
