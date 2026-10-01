@@ -1,7 +1,7 @@
 # ICISML 2027 — Conference Website
 
 Static site for the 7th International Conference on Intelligent Systems and
-Machine Learning (Hybrid Mode), hosted by PSIT Kanpur, 12–13 March 2027.
+Machine Learning (Hybrid Mode), hosted by PSIT Kanpur, 10–11 September 2027.
 
 Deployed via GitHub Pages (see `CNAME`). No build step — plain HTML with
 Tailwind CSS loaded from a CDN.
